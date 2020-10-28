@@ -1,0 +1,34 @@
+<template>
+  <div class="container">
+      <img src="../assets/logo.png" alt="logo" class="logo">
+      <h1>Register</h1>
+      <form class="form">
+          <input type="text" name="fullName" placeholder="Full Name" class="input">
+          <input type="text" name="accountName" placeholder="Account Name" class="input">
+          <input type="text" name="telephoneNumber" placeholder="Telephone Number" class="input">
+          <input type="text" name="password" placeholder="Password" class="input">
+          <input type="text" name="repeatPassword" placeholder="Repeat password" class="input">
+      </form>
+      <button class="button-big">Register</button>
+      <div class="text-down">
+          <span>Have already account?</span>
+          <a href="/login" class="text2">Login</a>
+        </div>
+        <div class="text-down">
+          <span>Forgot your password</span>
+          <a href="reset password" class="text2">Reset password</a>
+      </div>
+   </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style lang="sass" scoped>
+@use '@/style/form'
+.form
+   +form.form-height(50%)
+</style>
