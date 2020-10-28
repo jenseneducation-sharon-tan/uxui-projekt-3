@@ -1,4 +1,7 @@
 @use '@/style/base'
+
+$form-width: 82%
+
 .container
     max-width: 768px
     display: flex
@@ -9,25 +12,22 @@
     align-items: center
 
 .button-big
-    //-webkit-appearance: none
-    background: base.$orange
-    width: 244px
+    +base.common-button-orange()
+    margin: 20px
+    width: $form-width
     height: 55px
     cursor: pointer
-    border-radius: 5px
     border: base.$orange
-    color: base.$white
-    font-family: base.$font-Alfa
+
     font-size: 24px
     &:hover
         border: 5px solid base.$red
     &:focus
         outline: none
-        
 
 .logo
-    width:10%
-    margin:1em 0 0 1em
+    width: 10%
+    margin: 1em 0 0 1em
     align-self: flex-start
 
 =form-height($x)
@@ -36,29 +36,26 @@
 .form
     display: flex
     flex-direction: column
-    width: 80% 
+    width: $form-width
     justify-content: space-around
 
-
-    .input[type=text] 
-       padding: 12px 20px
-       margin: 8px 0
-       box-sizing: border-box
+    .input[type=text]
+        padding: 12px 20px
+        margin: 8px 0
+        box-sizing: border-box
 
     .input:focus
-       border: none
-       outline: 2px solid base.$orange
-        
+        border: none
+        outline: 2px solid base.$orange
 
 .text-down
-    margin: 1em
+    margin:0.5em
+    width: $form-width
     .text2
         color: base.$orange
         margin-left: 1em
 h1
-  font-family: base.$font-Alfa
-  color: base.$black
-  font-size: 24px
-  letter-spacing: 2px
-
-
+    font-family: base.$font-Alfa
+    color: base.$black
+    font-size: 24px
+    letter-spacing: 2px

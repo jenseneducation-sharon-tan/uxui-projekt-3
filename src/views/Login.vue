@@ -34,4 +34,6 @@ export default {};
 
 <style lang="sass" scoped>
 @use '@/style/form'
+.form
+   +form.form-height(50%)
 </style>

@@ -18,11 +18,57 @@ $breakpoint: 768px !default
 
 //base settings
 html
-  box-sizing: border-box
+    box-sizing: border-box
 
 body
-  margin:0
-  padding:0
+    margin: 0
+    padding: 0
 
+$font-Alfa: 'Alfa Slab One', cursive
+$font-Roboto: 'Roboto', sans-serif
 
+//button mixins
+=common-button-orange()
+    font-family: $font-Alfa
+    color: $white
+    background-color: $orange
+    border-radius: 10px
+    &:hover
+        border: 8px solid $red
+        box-shadow: 5px 5px 10px $grey
 
+=common-button-red()
+    font-family: $font-Alfa
+    color: $white
+    background-color: $red
+    border: none
+    border-radius: 10px
+    &:hover
+        color: $white
+        background-color: $red
+        border: 8px solid $orange
+        box-shadow: 5px 5px 10px $grey
+
+=common-ghost-button-orange()
+    font-family: $font-Alfa
+    color: $orange
+    background-color: $white
+    border: 3px solid $orange
+    border-radius: 10px
+    &:hover
+        color: $white
+        background-color: $orange
+        border: 8px solid $orange
+        box-shadow: 5px 5px 10px $grey
+
+=common-ghost-button-red()
+    font-family: $font-Alfa
+    color: $red
+    background-color: $white
+    border: 3px solid $red
+    border-radius: 10px
+    &:hover
+        color: $white
+        background-color: $red
+        border: 8px solid $red
+        box-shadow: 5px 5px 10px $grey
