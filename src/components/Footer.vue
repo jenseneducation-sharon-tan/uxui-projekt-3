@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <Nav />
+    <Nav v-bind:color="color" />
     <div class="footer_desktop">
       <span>© 2020 Eezer AB</span>
       <div class="contact">
@@ -24,9 +24,9 @@ export default {
     Nav,
   },
   data: () => ({
-    currentTab: 0,
-    incomingIcon: true,
+    color: "white",
   }),
+
   methods: {
     setValue(val) {
       this.currentTab = val;
@@ -54,7 +54,6 @@ footer
     display: none
 
 @media (min-width: base.$breakpoint)
-
     footer
        height: 142px
 

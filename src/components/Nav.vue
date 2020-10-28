@@ -1,19 +1,52 @@
 <template>
   <nav>
     <router-link class="nav_icon bookings" to="/" @click.native="setValue(1)">
-      <img v-if="currentTab !== 1" src="@/assets/bookings-white.png" alt="" />
+      <img
+        v-if="currentTab !== 1 && color !== undefined"
+        :src="require(`@/assets/bookings-${color}.png`)"
+        alt=""
+      />
       <img v-else src="@/assets/bookings-orange.png" alt="" />
-      <span :class="{ isOpen: currentTab === 1 }">Bookings</span>
+      <span
+        :class="{
+          isOpen: currentTab === 1,
+          white: color == 'white',
+          black: color == 'black',
+        }"
+        >Bookings</span
+      >
     </router-link>
     <router-link class="nav_icon travel-log" to="/" @click.native="setValue(2)">
-      <img v-if="currentTab !== 2" src="@/assets/bike-white.png" alt="" />
+      <img
+        v-if="(currentTab !== 2) & (color !== undefined)"
+        :src="require(`@/assets/bike-${color}.png`)"
+        alt=""
+      />
       <img v-else src="@/assets/bike-orange.png" alt="" />
-      <span :class="{ isOpen: currentTab === 2 }">Travel logs</span>
+      <span
+        :class="{
+          isOpen: currentTab === 2,
+          white: color == 'white',
+          black: color == 'black',
+        }"
+        >Travel logs</span
+      >
     </router-link>
     <router-link class="nav_icon profile" to="/" @click.native="setValue(3)">
-      <img v-if="currentTab !== 3" src="@/assets/person-white.png" alt="" />
+      <img
+        v-if="(currentTab !== 3) & (color !== undefined)"
+        :src="require(`@/assets/person-${color}.png`)"
+        alt=""
+      />
       <img v-else src="@/assets/person-orange.png" alt="" />
-      <span :class="{ isOpen: currentTab === 3 }">Profile</span>
+      <span
+        :class="{
+          isOpen: currentTab === 3,
+          white: color == 'white',
+          black: color == 'black',
+        }"
+        >Profile</span
+      >
     </router-link>
     <router-link
       class="nav_icon calls"
@@ -23,15 +56,27 @@
       <div v-if="incomingIcon" class="incoming">
         <div class="incoming_bg"><span>1</span></div>
       </div>
-      <img v-if="currentTab !== 4" src="@/assets/call-white.png" alt="" />
+      <img
+        v-if="(currentTab !== 4) & (color !== undefined)"
+        :src="require(`@/assets/call-${color}.png`)"
+        alt=""
+      />
       <img v-else src="@/assets/call-orange.png" alt="" />
-      <span :class="{ isOpen: currentTab === 4 }">Calls</span>
+      <span
+        :class="{
+          isOpen: currentTab === 4,
+          white: color == 'white',
+          black: color == 'black',
+        }"
+        >Calls</span
+      >
     </router-link>
   </nav>
 </template>
 
 <script>
 export default {
+  props: ["color"],
   data: () => ({
     currentTab: 0,
     incomingIcon: true,
@@ -49,6 +94,12 @@ export default {
 
 <style lang="sass" scoped>
 @use '@/style/base.sass'
+
+.white
+   color: base.$white
+
+.black
+   color: base.$black
 
 .isOpen
     color: base.$orange
@@ -72,6 +123,7 @@ nav
 a
     text-decoration: none
     outline: none
+    cursor: pointer
 
 
 .bookings
@@ -90,7 +142,7 @@ a
 
 .calls
     height:100%
-    position:relative
+
     img
        margin-top: 6px
        margin-bottom: 7px
@@ -102,7 +154,8 @@ a
     align-items: center
     z-index: 1
     height:100%
-    right: 4%
+    width: calc(26% - 50px)
+    right: 0
     top: -3px
 
     .incoming_bg
@@ -113,4 +166,25 @@ a
         display: flex
         justify-content: center
         align-items: center
+
+@media (min-width: base.$breakpoint)
+
+        nav
+           justify-content: center
+
+           span
+             font-size: 18px
+
+           a
+               margin: 0 32px
+
+           .profile
+              margin: 0 65px 0 45px
+
+           .incoming
+               width: 72px
+               right: calc(50% - 272px)
+
+               span
+                   font-size: 14px
 </style>
