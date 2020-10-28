@@ -1,6 +1,8 @@
 <template>
   <header>
-    <img src="@/assets/logo.png" alt="" />
+    <router-link to="/">
+      <img class="logo" src="@/assets/logo.png" alt="" />
+    </router-link>
     <Nav v-bind:color="color" />
   </header>
 </template>
@@ -25,6 +27,9 @@ header
     img
       height:40px
       margin: 0.7em auto 0 0.7em
+      cursor: pointer
+      z-index: 1
+      position: relative
     nav
        display: none
 
