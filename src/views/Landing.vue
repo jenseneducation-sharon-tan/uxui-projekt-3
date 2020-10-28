@@ -1,17 +1,13 @@
 <template>
+
   <div class="home">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-	<!-- <div class="landing_image">
-    <img alt="eezer" src="../assets/eezer.png" width=100%  >
-	</div> -->
 	<div class="logo">
-	<div class="logo_img" v-show="isVisible">
-	<img class="logo_image" alt="eezer logo" src="../assets/logo.png" ></div>
-	<div class="text">
-	<h1>Help us reduce maternal mortality in Africa with Eezer's motorcycle ambulances</h1>
-	<div class="background">
-	<h2>Our goal is to develop safe and cost-effective transport solutions for pregnant mothers and to have 3000 motorcycle ambulances in Africa by 2030.</h2></div></div>
+	<img class="logo_image"  v-if="windowWidth <768" alt="" src="../assets/logo.png" >
+	<div class="text" v-else >
+		<h1>Help us reduce maternal mortality in Africa with Eezer's motorcycle ambulances</h1>
+		<div class="background">
+			<h2>Our goal is to develop safe and cost-effective transport solutions for pregnant mothers and to have 3000 motorcycle ambulances in Africa by 2030.</h2></div></div>
   </div>
   </div>
 </template>
@@ -27,13 +23,24 @@ export default {
   },
 data: function () {
     return {
-   
-      isVisible: false,
-  
-    };
+/* isVisible: true, */
+windowWidth: window.innerWidth
+};
+},
+methods: {
+		setWindowWidth() {
+      this.windowWidth = window.innerWidth;
+    }
+	},
+created() {
+    window.addEventListener(
+      'resize',
+      this.setWindowWidth
+    )
   },
 }
 </script>
+
 <style lang="sass" scoped >
 @use '@/style/base.sass'
 
@@ -43,12 +50,12 @@ data: function () {
 .landing_image 
 	height: 100%
 
-
 .logo_image 
 	margin: auto 0
 	align-self: center
 	justify-self: center
-
+	width: 120px
+	height: 150px
 .logo 
 	background-image: url("../assets/background-pic.png")
 	height:100vh
@@ -56,7 +63,6 @@ data: function () {
 	background-size: cover
 	display: flex
 	justify-content: center
-
 	display: flex
 	flex-direction: column
 	h1
@@ -80,5 +86,6 @@ data: function () {
 		font-weight: 100
 		color: base.$white
 		font-size: 24px
+
 
 </style>
