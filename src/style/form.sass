@@ -19,6 +19,11 @@
     color: base.$white
     font-family: base.$font-Alfa
     font-size: 24px
+    &:hover
+        border: 5px solid base.$red
+    &:focus
+        outline: none
+        
 
 .logo
     width:10%
@@ -39,8 +44,10 @@
        padding: 12px 20px
        margin: 8px 0
        box-sizing: border-box
+
     .input:focus
-        border:1px solid base.$orange
+       border: none
+       outline: 2px solid base.$orange
         
 
 .text-down
