@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <img src="../assets/logo.png" alt="logo" class="logo">
     <h1>Log in</h1>
     <form class="form">
       <input
@@ -35,5 +34,5 @@ export default {};
 <style lang="sass" scoped>
 @use '@/style/form'
 .form
-   +form.form-height(50%)
+   +form.form-height(30%)
 </style>

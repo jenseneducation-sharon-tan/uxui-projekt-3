@@ -25,10 +25,7 @@ $form-width: 82%
     &:focus
         outline: none
 
-.logo
-    width: 10%
-    margin: 1em 0 0 1em
-    align-self: flex-start
+
 
 =form-height($x)
     height: $x
@@ -40,17 +37,26 @@ $form-width: 82%
     justify-content: space-around
 
     .input[type=text]
-        padding: 12px 20px
+        padding-bottom: 6px
+        font-family: base.$font-Roboto
         margin: 8px 0
         box-sizing: border-box
-
+        border: none
+        font-size: 12px
+        border-bottom: 1px solid base.$black
     .input:focus
         border: none
-        outline: 2px solid base.$orange
+        //padding: 12px 20px
+        outline: none
+        border-bottom: 1px solid base.$orange
+    
+
 
 .text-down
     margin:0.5em
     width: $form-width
+    font-family: base.$font-Roboto
+    font-size: 12px
     .text2
         color: base.$orange
         margin-left: 1em

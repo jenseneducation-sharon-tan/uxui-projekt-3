@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-      <img src="../assets/logo.png" alt="logo" class="logo">
+     
       <h1>Register</h1>
       <form class="form">
           <input type="text" name="fullName" placeholder="Full Name" class="input">
