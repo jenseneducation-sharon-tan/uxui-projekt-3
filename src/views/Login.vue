@@ -35,4 +35,8 @@ export default {};
 @use '@/style/form'
 .form
    +form.form-height(30%)
+
+@media screen and (min-width: form.$breakpoint)
+  .form
+    +form.form-height(20%)
 </style>

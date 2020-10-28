@@ -1,13 +1,14 @@
 @use '@/style/base'
 
 $form-width: 82%
+$breakpoint: base.$breakpoint
 
 .container
-    max-width: 768px
+    max-width: base.$breakpoint
     display: flex
     flex-direction: column
     margin: auto
-    border: 2px solid base.$grey
+   
     height: 100vh
     align-items: center
 
@@ -46,7 +47,7 @@ $form-width: 82%
         border-bottom: 1px solid base.$black
     .input:focus
         border: none
-        //padding: 12px 20px
+       
         outline: none
         border-bottom: 1px solid base.$orange
     
@@ -65,3 +66,23 @@ h1
     color: base.$black
     font-size: 24px
     letter-spacing: 2px
+
+@media screen and (min-width: base.$breakpoint)
+    h1
+     font-size: 36px
+
+    .button-big
+        width: 244px
+
+    .form .input[type=text]
+       font-size: 18px
+
+    .text-down
+        width: $form-width - 38%
+        margin-top: 1em
+        font-size: 18px
+        .text2
+            margin-left: 1.5em
+        
+        
+ 
