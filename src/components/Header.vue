@@ -21,7 +21,6 @@
         to="/login"
         >Log in</router-link
       >
-      <button @click="test()">test</button>
     </div>
   </header>
 </template>
