@@ -1,3 +1,11 @@
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto:wght@400;700&display=swap')
+
+$font-Alfa: 'Alfa Slab One', cursive
+$font-Roboto: 'Roboto', sans-serif
+
+//colors
 $white: #FFFFFF
 $orange: #F87514
 $red: #E00405
@@ -5,9 +13,17 @@ $grey: #707070
 $light-grey:#E1E1E1
 $black: #1B1B1B
 
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap')
+//breakpoint
+$breakpoint: 768px !default
 
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto:wght@400;700&display=swap')
+//base settings
+html
+  box-sizing: border-box
+
+body
+ /**  margin: 0 **/
+  padding: 0
+  font-family: $font-Roboto
 
 $font-Alfa: 'Alfa Slab One', cursive
 $font-Roboto: 'Roboto', sans-serif
@@ -15,47 +31,42 @@ $font-Roboto: 'Roboto', sans-serif
 //breakpoint
 $breakpoint: 768px !default
 
-//base settings
-html
-	box-sizing: border-box
-
-body
-	margin: 0
-	padding: 0
+/** .wrapper
+ min-height: 100vh **/
 
 //button mixins
 =common-button-orange()
-	font-family: $font-Alfa
-	color: $white
-	background-color: $orange
-	border-radius: 10px
+  font-family: $font-Alfa
+  color: $white
+  background-color: $orange
+  border-radius: 10px
 	&:hover
-		border: 8px solid $red
-		box-shadow: 5px 5px 10px $grey
+	  border: 8px solid $red
+	  box-shadow: 5px 5px 10px $grey
 
 =common-button-red()
-	font-family: $font-Alfa
-	color: $white
-	background-color: $red
-	border: none
-	border-radius: 10px
+  font-family: $font-Alfa
+  color: $white
+  background-color: $red
+  border: none
+  border-radius: 10px
 	&:hover
-		color: $white
-		background-color: $red
-		border: 8px solid $orange
-		box-shadow: 5px 5px 10px $grey
+	  color: $white
+	  background-color: $red
+	  border: 8px solid $orange
+	  box-shadow: 5px 5px 10px $grey
 
 =common-ghost-button-orange()
-	font-family: $font-Alfa
-	color: $orange
-	background-color: $white
-	border: 3px solid $orange
-	border-radius: 10px
+  font-family: $font-Alfa
+  color: $orange
+  background-color: $white
+  border: 3px solid $orange
+  border-radius: 10px
 	&:hover
-		color: $white
-		background-color: $orange
-		border: 8px solid $orange
-		box-shadow: 5px 5px 10px $grey
+      color: $white
+	  background-color: $orange
+	  border: 8px solid $orange
+	  box-shadow: 5px 5px 10px $grey
 
 =common-ghost-button-red()
 	font-family: $font-Alfa

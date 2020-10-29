@@ -1,15 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Registeration from '../views/Registeration.vue'
+import Login from '../views/Login.vue'
 import patientContact from '../views/patientContact.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/registeration',
+    name: 'registeration',
+    component: Registeration
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
   },
   {
     path: '/patientContact',
