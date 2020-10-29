@@ -1,40 +1,40 @@
 <template>
-  <footer>
-    <Nav v-bind:color="color" />
-    <div class="footer_desktop">
-      <span>© 2020 Eezer AB</span>
-      <div class="contact">
-        <div class="telephone">
-          <img src="@/assets/call-orange.png" alt="" />
-          <span>+254 567 4526</span>
+    <footer>
+        <Nav v-bind:color="color" />
+        <div class="footer_desktop">
+            <span>© 2020 Eezer AB</span>
+            <div class="contact">
+                <div class="telephone">
+                    <img src="@/assets/call-orange.png" alt="" />
+                    <span>+254 567 4526</span>
+                </div>
+                <div class="email">
+                    <img src="@/assets/email.png" alt="" />
+                    <span>info@eezer.com</span>
+                </div>
+            </div>
         </div>
-        <div class="email">
-          <img src="@/assets/email.png" alt="" />
-          <span>info@eezer.com</span>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 </template>
 
 <script>
 import Nav from "@/components/Nav.vue";
 export default {
-  components: {
-    Nav,
-  },
-  data: () => ({
-    color: "white",
-  }),
+    components: {
+        Nav,
+    },
+    data: () => ({
+        color: "white",
+    }),
 
-  methods: {
-    setValue(val) {
-      this.currentTab = val;
+    methods: {
+        setValue(val) {
+            this.currentTab = val;
+        },
+        removeIncomingIcon() {
+            this.incomingIcon = false;
+        },
     },
-    removeIncomingIcon() {
-      this.incomingIcon = false;
-    },
-  },
 };
 </script>
 
