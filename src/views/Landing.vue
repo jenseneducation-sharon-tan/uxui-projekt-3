@@ -113,9 +113,7 @@ footer
 	footer
 		display: flex
 		position: relative
-	
-	nav
-		display: none
+
 
 	
 
