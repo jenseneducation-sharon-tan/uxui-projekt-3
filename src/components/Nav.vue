@@ -16,7 +16,7 @@
         >Bookings</span
       >
     </router-link>
-    <router-link class="nav_icon travel-log" to="/" @click.native="setValue(2)">
+    <router-link class="nav_icon travel-log" to="/travelLogs" @click.native="setValue(2)">
       <img
         v-if="(currentTab !== 2) & (color !== undefined)"
         :src="require(`@/assets/bike-${color}.png`)"
