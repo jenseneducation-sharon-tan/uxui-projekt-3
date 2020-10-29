@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Registeration from '../views/Registeration.vue'
 import Login from '../views/Login.vue'
+import patientContact from '../views/patientContact.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login
+  },
+  {
+    path: '/patientContact',
+    name: 'Patient Contact',
+    component: patientContact
   },
  
 ]
