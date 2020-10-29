@@ -4,6 +4,7 @@ import Landing from '../views/Landing.vue'
 import Registeration from '../views/Registeration.vue'
 import Login from '../views/Login.vue'
 import patientContact from '../views/patientContact.vue'
+import travelLogs from '../views/TravelLogs.vue'
 
 Vue.use(VueRouter)
 
@@ -31,6 +32,11 @@ const routes = [
     path: '/patientContact',
     name: 'Patient Contact',
     component: patientContact
+  },
+  {
+    path: '/travelLogs',
+    name: 'TravelLogs',
+    component: travelLogs
   },
  
 ]
