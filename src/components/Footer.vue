@@ -46,7 +46,7 @@ footer
     height: 56px
     background-color: base.$black
     position: absolute
-    bottom: 0
+    margin-top: auto
     display: flex
     justify-content: center
 
