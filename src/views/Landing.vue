@@ -56,14 +56,18 @@ a
 	cursor: pointer
 
 .logo_image 
-	margin: auto 0
+	
 	align-self: center
 	justify-self: center
 	width: 120px
 	height: 150px
+	cursor: pointer
+	z-index: 1
+	
+
 .logo 
 	background-image: url("../assets/background-pic.png")
-	height: 100vh
+	height: 100%
 	background-repeat: no-repeat
 	background-size: cover
 	display: flex
@@ -103,12 +107,15 @@ footer
 	
 @media  (min-width: base.$breakpoint)
 
-header
-	display: flex
+	header
+		display: flex
 
-footer
-	display: flex
-	position: relative
+	footer
+		display: flex
+		position: relative
+	
+	nav
+		display: none
 
 	
 
