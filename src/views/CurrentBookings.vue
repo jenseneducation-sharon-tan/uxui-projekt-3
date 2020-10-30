@@ -51,6 +51,7 @@ export default {
     .booking-container
         background: base.$light-grey
         padding-bottom:2rem
+        height: 80vh
         .booking-title
             background: base.$white
             padding-bottom:1rem 
