@@ -88,14 +88,14 @@ a
 	
 .background
 	background-color: base.$black
-	opacity: 0.3
+	opacity: 0.31
 	width: 600px
 	margin: 20px
 	padding: 50px
 	align-self: center
 	h2
 		font-family: base.$font-Alfa
-		font-weight: 100
+		font-weight: 150
 		color: base.$white
 		font-size: 24px
 

@@ -6,6 +6,7 @@ import Login from '../views/Login.vue'
 import PatientContact from '../views/PatientContact.vue'
 import TravelDetails from '../views/TravelDetails.vue'
 import CurrentBookings from '../views/CurrentBookings.vue'
+import travelLogs from '../views/TravelLogs.vue'
 
 Vue.use(VueRouter)
 
@@ -45,7 +46,11 @@ const routes = [
     name: 'Current Bookings',
     component: CurrentBookings
   },
- 
+ {
+    path: '/travelLogs',
+    name: 'TravelLogs',
+    component: travelLogs
+  },
  
 ]
 
