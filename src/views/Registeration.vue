@@ -60,6 +60,7 @@ export default {
   methods: {
     login() {
       this.$globalData.loggedIn = true;
+      this.$router.push('/current-bookings')
     },
   },
 };
