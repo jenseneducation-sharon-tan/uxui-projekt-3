@@ -2,10 +2,12 @@
   <div class="TravelLogs">
     <Header />
     <div class="travel-container">
-      <h1>Travel logs</h1>
-    <div class="travel-logs">
+      <div class="travelLog-title">
+          <h1>Travel logs</h1>
+      </div>
+      <div class="travel-logs">
         <TravelDiv v-for="travelLog in travelLogs" v-bind:key="travelLog.id" v-bind:travelLog="travelLog" />
-    </div>
+      </div>
     </div>
     <Footer />
   </div>
@@ -66,5 +68,15 @@ export default {
     text-align: center
     .travel-container
         background: base.$light-grey
-        padding: 2rem
+        padding-bottom:2rem
+        .travelLog-title
+            background: base.$white
+            padding-bottom:1rem
+        .travel-logs
+            padding: 2rem
+@media screen and (max-width: base.$breakpoint)
+    .TravelLogs
+        .travel-container
+            .travel-logs
+                padding: 0
 </style>
