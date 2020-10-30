@@ -4,6 +4,7 @@ import router from "./router";
 
 Vue.prototype.$globalData = Vue.observable({
   loggedIn: false,
+  incomingIcon: true,
 });
 
 Vue.config.productionTip = false;
