@@ -5,6 +5,7 @@ import Registeration from '../views/Registeration.vue'
 import Login from '../views/Login.vue'
 import patientContact from '../views/patientContact.vue'
 import travelLogs from '../views/TravelLogs.vue'
+import Calls from'../views/Calls'
 
 Vue.use(VueRouter)
 
@@ -38,6 +39,11 @@ const routes = [
     name: 'TravelLogs',
     component: travelLogs
   },
+  {
+    path:'/calls',
+    name:'calls',
+    component:Calls
+  }
  
 ]
 
