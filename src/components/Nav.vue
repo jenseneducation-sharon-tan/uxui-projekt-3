@@ -1,47 +1,87 @@
 <template>
   <nav>
-    <router-link class="nav_icon bookings" to="/current-bookings" @click.native="setValue(1)">
+    <router-link
+      class="nav_icon bookings"
+      to="/current-bookings"
+      @mouseover.native="active1 = true"
+      @mouseleave.native="active1 = false"
+    >
       <img
-        v-if="currentTab !== 1 && color !== undefined"
+        v-show="
+          this.$route.path !== '/current-bookings' &&
+            color !== undefined &&
+            active1 !== true
+        "
         :src="require(`@/assets/bookings-${color}.png`)"
         alt=""
       />
-      <img v-else src="@/assets/bookings-orange.png" alt="" />
+      <img
+        v-show="this.$route.path === '/current-bookings' || active1 == true"
+        src="@/assets/bookings-orange.png"
+        alt=""
+      />
       <span
         :class="{
-          isOpen: currentTab === 1,
+          active: active1 == true,
+          isOpen: this.$route.path === '/current-bookings',
           white: color == 'white',
           black: color == 'black',
         }"
         >Bookings</span
       >
     </router-link>
-    <router-link class="nav_icon travel-log" to="/travelLogs" @click.native="setValue(2)">
+    <router-link
+      class="nav_icon travel-log"
+      to="/travelLogs"
+      @mouseover.native="active2 = true"
+      @mouseleave.native="active2 = false"
+    >
       <img
-        v-if="(currentTab !== 2) & (color !== undefined)"
+        v-show="
+          this.$route.path !== '/travelLogs' &&
+            color !== undefined &&
+            active2 !== true
+        "
         :src="require(`@/assets/bike-${color}.png`)"
         alt=""
       />
-      <img v-else src="@/assets/bike-orange.png" alt="" />
+      <img
+        v-show="this.$route.path === '/travelLogs' || active2 == true"
+        src="@/assets/bike-orange.png"
+        alt=""
+      />
       <span
         :class="{
-          isOpen: currentTab === 2,
+          active: active2 == true,
+          isOpen: this.$route.path === '/travelLogs',
           white: color == 'white',
           black: color == 'black',
         }"
         >Travel logs</span
       >
     </router-link>
-    <router-link class="nav_icon profile" to="/" @click.native="setValue(3)">
+    <router-link
+      class="nav_icon profile"
+      to="/"
+      @mouseover.native="active3 = true"
+      @mouseleave.native="active3 = false"
+    >
       <img
-        v-if="(currentTab !== 3) & (color !== undefined)"
+        v-show="
+          this.$route.path !== '/' && color !== undefined && active3 !== true
+        "
         :src="require(`@/assets/person-${color}.png`)"
         alt=""
       />
-      <img v-else src="@/assets/person-orange.png" alt="" />
+      <img
+        v-show="this.$route.path === '/' || active3 == true"
+        src="@/assets/person-orange.png"
+        alt=""
+      />
       <span
         :class="{
-          isOpen: currentTab === 3,
+          active: active3 == true,
+          isOpen: this.$route.path === '/',
           white: color == 'white',
           black: color == 'black',
         }"
@@ -51,20 +91,33 @@
     <router-link
       class="nav_icon calls"
       to="/calls"
-      @click.native="setValue(4), removeIncomingIcon()"
+      @click.native="removeIncomingIcon()"
+      @mouseover.native="active4 = true"
+      @mouseleave.native="active4 = false"
     >
-      <div v-if="incomingIcon" class="incoming">
-        <div class="incoming_bg"><span>1</span></div>
+      <div v-if="incomingIcon == true" class="incoming">
+        <div class="incoming_bg">
+          <span>1</span>
+        </div>
       </div>
       <img
-        v-if="(currentTab !== 4) & (color !== undefined)"
+        v-show="
+          this.$route.path !== '/calls' &&
+            color !== undefined &&
+            active4 !== true
+        "
         :src="require(`@/assets/call-${color}.png`)"
         alt=""
       />
-      <img v-else src="@/assets/call-orange.png" alt="" />
+      <img
+        v-show="this.$route.path === '/calls' || active4 == true"
+        src="@/assets/call-orange.png"
+        alt=""
+      />
       <span
         :class="{
-          isOpen: currentTab === 4,
+          active: active4 == true,
+          isOpen: this.$route.path === '/calls',
           white: color == 'white',
           black: color == 'black',
         }"
@@ -78,15 +131,19 @@
 export default {
   props: ["color"],
   data: () => ({
-    currentTab: 0,
-    incomingIcon: true,
+    active1: false,
+    active2: false,
+    active3: false,
+    active4: false,
   }),
-  methods: {
-    setValue(val) {
-      this.currentTab = val;
+  computed: {
+    incomingIcon() {
+      return this.$globalData.incomingIcon;
     },
+  },
+  methods: {
     removeIncomingIcon() {
-      this.incomingIcon = false;
+      this.$globalData.incomingIcon = false;
     },
   },
 };
@@ -124,7 +181,6 @@ a
     text-decoration: none
     outline: none
     cursor: pointer
-
 
 .bookings
     img
@@ -169,22 +225,25 @@ a
 
 @media (min-width: base.$breakpoint)
 
-        nav
-           justify-content: center
+  nav
+    justify-content: center
 
-           span
-             font-size: 18px
+    span
+      font-size: 18px
 
-           a
-               margin: 0 32px
+    a
+      margin: 0 32px
 
-           .profile
-              margin: 0 65px 0 45px
+    .active
+      color: base.$orange
 
-           .incoming
-               width: 72px
-               right: calc(50% - 272px)
+    .profile
+      margin: 0 65px 0 45px
 
-               span
-                   font-size: 14px
+    .incoming
+      width: 72px
+      right: calc(50% - 272px)
+
+      span
+        font-size: 14px
 </style>

@@ -47,6 +47,8 @@ export default {
 
 header
     width: 100%
+    .logo
+    text-align: left
     img
       height:40px
       margin: 0.7em auto 0 0.7em
