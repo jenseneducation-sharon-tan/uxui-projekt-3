@@ -1,6 +1,7 @@
 <template>
   <nav>
     <router-link
+      v-if="!mission"
       class="nav_icon bookings"
       to="/current-bookings"
       @mouseover.native="active1 = true"
@@ -28,6 +29,38 @@
           black: color == 'black',
         }"
         >Bookings</span
+      >
+    </router-link>
+
+    <router-link
+      v-if="mission"
+      class="nav_icon mission"
+      to="/ravel-details"
+      @mouseover.native="active1 = true"
+      @mouseleave.native="active1 = false"
+    >
+      <img
+        v-show="
+          this.$route.path !== '/travel-details' &&
+            color !== undefined &&
+            active1 !== true
+        "
+        :src="require(`@/assets/mission-${color}.png`)"
+        alt=""
+      />
+      <img
+        v-show="this.$route.path === '/travel-details' || active1 == true"
+        src="@/assets/mission-orange.png"
+        alt=""
+      />
+      <span
+        :class="{
+          active: active1 == true,
+          isOpen: this.$route.path === '/travel-details',
+          white: color == 'white',
+          black: color == 'black',
+        }"
+        >Mission</span
       >
     </router-link>
     <router-link
@@ -140,6 +173,9 @@ export default {
     incomingIcon() {
       return this.$globalData.incomingIcon;
     },
+    mission() {
+      return this.$globalData.mission;
+    },
   },
   methods: {
     removeIncomingIcon() {
@@ -186,6 +222,11 @@ a
     img
        margin-top: 2px
        margin-bottom: 4px
+
+.mission
+    img
+       margin-top: 6px
+
 
 .travel-log
     img
@@ -238,7 +279,7 @@ a
       color: base.$orange
 
     .profile
-      margin: 0 65px 0 45px
+      margin: 0 60px 0 45px
 
     .incoming
       width: 72px
