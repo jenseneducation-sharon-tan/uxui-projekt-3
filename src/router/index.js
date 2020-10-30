@@ -34,7 +34,7 @@ const routes = [
   },
   {
     path: '/patient-contact',
-    name: 'Patient Contact',
+    name: 'PatientContact',
     component: PatientContact
   },
   {
@@ -44,7 +44,7 @@ const routes = [
   },
   {
     path: '/current-bookings',
-    name: 'Current Bookings',
+    name: 'CurrentBookings',
     component: CurrentBookings
   },
  {
