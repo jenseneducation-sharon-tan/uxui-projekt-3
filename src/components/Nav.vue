@@ -50,7 +50,7 @@
     </router-link>
     <router-link
       class="nav_icon calls"
-      to="/"
+      to="/calls"
       @click.native="setValue(4), removeIncomingIcon()"
     >
       <div v-if="incomingIcon" class="incoming">
