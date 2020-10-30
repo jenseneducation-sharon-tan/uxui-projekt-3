@@ -5,6 +5,7 @@ import Registeration from '../views/Registeration.vue'
 import Login from '../views/Login.vue'
 import patientContact from '../views/patientContact.vue'
 import travelLogs from '../views/TravelLogs.vue'
+import Profile from '../views/Profile.vue'
 
 Vue.use(VueRouter)
 
@@ -17,7 +18,8 @@ const routes = [
   {
     path: '/',
     name: 'Landing',
-    component: Landing},
+	component: Landing
+},
   {
     path: '/registeration',
     name: 'registeration',
@@ -38,6 +40,11 @@ const routes = [
     name: 'TravelLogs',
     component: travelLogs
   },
+  {
+    path: '/profile',
+    name: 'Profile',
+	component: Profile
+},
  
 ]
 
