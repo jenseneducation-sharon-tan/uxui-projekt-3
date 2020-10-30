@@ -3,9 +3,12 @@ import VueRouter from 'vue-router'
 import Landing from '../views/Landing.vue'
 import Registeration from '../views/Registeration.vue'
 import Login from '../views/Login.vue'
-import patientContact from '../views/patientContact.vue'
+import PatientContact from '../views/PatientContact.vue'
+import TravelDetails from '../views/TravelDetails.vue'
+import CurrentBookings from '../views/CurrentBookings.vue'
 import travelLogs from '../views/TravelLogs.vue'
 import Profile from '../views/Profile.vue'
+import Calls from'../views/Calls'
 
 Vue.use(VueRouter)
 
@@ -20,6 +23,7 @@ const routes = [
     name: 'Landing',
 	component: Landing
 },
+
   {
     path: '/registeration',
     name: 'registeration',
@@ -31,11 +35,21 @@ const routes = [
     component: Login
   },
   {
-    path: '/patientContact',
-    name: 'Patient Contact',
-    component: patientContact
+    path: '/patient-contact',
+    name: 'PatientContact',
+    component: PatientContact
   },
   {
+    path: '/travel-details',
+    name: 'Travel Details',
+    component: TravelDetails
+  },
+  {
+    path: '/current-bookings',
+    name: 'CurrentBookings',
+    component: CurrentBookings
+  },
+ {
     path: '/travelLogs',
     name: 'TravelLogs',
     component: travelLogs
@@ -45,6 +59,11 @@ const routes = [
     name: 'Profile',
 	component: Profile
 },
+{
+    path:'/calls',
+    name:'calls',
+    component:Calls
+  }
  
 ]
 
