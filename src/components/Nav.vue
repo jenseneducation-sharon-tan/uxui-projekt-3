@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <router-link class="nav_icon bookings" to="/" @click.native="setValue(1)">
+    <router-link class="nav_icon bookings" to="/current-bookings" @click.native="setValue(1)">
       <img
         v-if="currentTab !== 1 && color !== undefined"
         :src="require(`@/assets/bookings-${color}.png`)"
