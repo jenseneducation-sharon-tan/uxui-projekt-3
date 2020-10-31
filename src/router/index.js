@@ -7,6 +7,7 @@ import PatientContact from '../views/PatientContact.vue'
 import TravelDetails from '../views/TravelDetails.vue'
 import CurrentBookings from '../views/CurrentBookings.vue'
 import travelLogs from '../views/TravelLogs.vue'
+import Profile from '../views/Profile.vue'
 import Calls from'../views/Calls'
 
 Vue.use(VueRouter)
@@ -21,7 +22,8 @@ const routes = [
     path: '/',
     name: 'Landing',
 	component: Landing
-  },
+},
+
   {
     path: '/registeration',
     name: 'registeration',
@@ -53,6 +55,11 @@ const routes = [
     component: travelLogs
   },
   {
+    path: '/profile',
+    name: 'Profile',
+	component: Profile
+},
+{
     path:'/calls',
     name:'calls',
     component:Calls
