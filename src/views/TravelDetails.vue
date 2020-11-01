@@ -165,8 +165,9 @@ export default {
 		width: 85%
 		height: 70px
 		border-radius: 10px
-		&placeholder
-			color: red
+	::placeholder
+		padding: 5px 10px
+
 	.voice
 		+base.common-button-orange()
 		font-family: base.$font-Roboto
