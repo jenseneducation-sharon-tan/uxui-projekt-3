@@ -1,7 +1,5 @@
 <template>
   <div class="patient-contact">
-    <!-- <img src="@/assets/map.png" alt="patient-map" /> -->
-    <!--  <Nav class="navigation" /> -->
     <Header />
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2033.5478537929318!2d34.773183581455356!3d-0.6809892608488292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182b3bf8d3457fc9%3A0x3ac1e6686dd0e022!2sKisii%20Cultural%20Center!5e0!3m2!1sen!2sse!4v1603894178224!5m2!1sen!2sse"
@@ -26,13 +24,11 @@
 </template>
 
 <script>
-/* import Nav from "@/components/Nav.vue"; */
 import Footer from "@/components/Footer.vue";
 import Header from "@/components/Header.vue";
 export default {
   components: {
     Header,
-    /*  Nav, */
     Footer,
   },
 };
@@ -96,10 +92,9 @@ iframe
 
 footer
 	align-self: end
-	bottom: 0px
+	bottom: -50px
 
 @media (min-width: base.$breakpoint)
-
 	.patient-contact
 		height: auto
 		.patient-details
