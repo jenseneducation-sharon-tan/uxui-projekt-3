@@ -8,12 +8,14 @@
           type="text"
           name="fullName"
           placeholder="Full Name"
+          value="Alamini Gaalav"
           class="input"
         />
         <input
           type="text"
           name="accountName"
           placeholder="Account Name"
+          value="aalmini@eezer.com"
           class="input"
         />
         <input
@@ -21,17 +23,20 @@
           name="telephoneNumber"
           placeholder="Telephone Number"
           class="input"
+          value="+254720266878"
         />
         <input
-          type="text"
+          type="password"
           name="password"
           placeholder="Password"
+          value="aaaaaaaa"
           class="input"
         />
         <input
-          type="text"
+          type="password"
           name="repeatPassword"
           placeholder="Repeat password"
+          value="aaaaaaaa"
           class="input"
         />
       </form>

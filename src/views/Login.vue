@@ -8,12 +8,14 @@
           type="text"
           name="accountName"
           placeholder="Account Name"
+          value="aalmini@eezer.com"
           class="input"
         />
         <input
-          type="text"
+          type="password"
           name="password"
           placeholder="Password"
+          value="aaaaaaaa"
           class="input"
         />
       </form>

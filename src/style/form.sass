@@ -35,7 +35,7 @@ $breakpoint: base.$breakpoint
     width: $form-width
     justify-content: space-around
 
-    .input[type=text]
+    .input[type=text],[type=password]
         padding-bottom: 6px
         font-family: base.$font-Roboto
         margin: 8px 0
@@ -47,7 +47,7 @@ $breakpoint: base.$breakpoint
         border: none
         outline: none
         border-bottom: 2px solid base.$orange
-    
+        
 
 
 .text-down
@@ -73,7 +73,8 @@ h1
 
     .form .input[type=text]
        font-size: 18px
-
+    .form .input[type=password]
+       font-size: 18px
     .text-down
         width: $form-width - 38%
         margin-top: 1em
