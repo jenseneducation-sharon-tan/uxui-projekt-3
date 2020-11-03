@@ -97,7 +97,7 @@ export default {
         font-size: 36px
 
     .call-page .calls .call-one
-        width: 70%
+        width: 756px
         align-self: center
         height: 60px
         img
