@@ -36,6 +36,7 @@ export default {
     display: flex
     flex-direction: column
     width: 28%
+    min-width: 300px
     .booking-info
         text-align: left
         .booking-info-name, .booking-info-location
