@@ -32,3 +32,6 @@ Kortfattad beskrivning av hur ni delat upp arbetet
 
 Figma länk till prototyp
 https://www.figma.com/file/IOej5SmdJqLsGF577ci15Y/uxui-projekt-3?node-id=3%3A1105
+
+Länk till appen
+https://jenseneducation-sharon-tan.github.io/uxui-projekt-3/#/
