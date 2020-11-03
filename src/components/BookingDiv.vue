@@ -47,6 +47,7 @@ export default {
     .booking-btn-div
         .booking-btn
             +base.common-button-orange
+            margin-top: 15px
             padding: 10px
             border: none
             width: 200px

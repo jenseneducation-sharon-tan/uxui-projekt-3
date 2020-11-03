@@ -95,7 +95,7 @@
     </router-link>
     <router-link
       class="nav_icon profile"
-      to="/"
+      to="/profile"
       @mouseover.native="active3 = true"
       @mouseleave.native="active3 = false"
     >
@@ -114,7 +114,7 @@
       <span
         :class="{
           active: active3 == true,
-          isOpen: this.$route.path === '/',
+          isOpen: this.$route.path === '/profile',
           white: color == 'white',
           black: color == 'black',
         }"
