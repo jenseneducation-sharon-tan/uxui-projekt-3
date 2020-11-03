@@ -10,7 +10,7 @@
     </div>
     <div class="buttons">
       <router-link to="/travel-details">
-        <button class="accept">Accept</button>
+        <button @click="accept" class="accept">Accept</button>
       </router-link>
       <router-link to="/current-bookings">
         <button class="decline">Decline</button>
@@ -30,6 +30,16 @@ export default {
   components: {
     Header,
     Footer,
+  },
+  computed: {
+    mission() {
+      return this.$globalData.mission;
+    },
+  },
+  methods: {
+    accept() {
+      this.$globalData.mission = true;
+    },
   },
 };
 </script>
