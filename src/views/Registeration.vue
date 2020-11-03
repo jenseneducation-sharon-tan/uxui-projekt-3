@@ -43,11 +43,11 @@
       <button class="button-big" @click="login()">Register</button>
       <div class="text-down">
         <span>Have already account?</span>
-        <a href="/login" class="text2">Login</a>
+        <router-link to="/login" class="text2">Login</router-link>
       </div>
       <div class="text-down">
         <span>Forgot your password</span>
-        <a href="reset password" class="text2">Reset password</a>
+        <router-link to="" class="text2">Reset password</router-link>
       </div>
     </div>
     <Footer />
@@ -65,7 +65,7 @@ export default {
   methods: {
     login() {
       this.$globalData.loggedIn = true;
-      this.$router.push('/current-bookings')
+      this.$router.push("/current-bookings");
     },
   },
 };
