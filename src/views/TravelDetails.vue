@@ -46,7 +46,16 @@
               rows="10"
               placeholder="Note"
             ></textarea>
-            <button class="voice">Voice Typing</button>
+            <button class="voice" @click="toggleMic" v-show="!showMic">
+              Voice Typing
+              <!--  <span class="tooltiptext">Click and hold to talk</span> -->
+            </button>
+            <img
+              src="../assets/mic.svg"
+              alt="microphone"
+              @click="toggleMic"
+              v-show="showMic"
+            />
           </div>
         </div>
       </div>
@@ -62,6 +71,16 @@ export default {
   components: {
     Header,
     Footer,
+  },
+  data: function() {
+    return {
+      showMic: false,
+    };
+  },
+  methods: {
+    toggleMic() {
+      this.showMic = !this.showMic;
+    },
   },
 };
 </script>
@@ -87,6 +106,30 @@ export default {
 		position: relative
 		bottom: -6px
 		margin-right: 5px
+		@-webkit-animation: pulse 2s ease-in
+		@-moz-animation: pulse 2s ease-in
+		animation: pulse 2s ease-in
+		@webkit-animation-iteration-count: infinite
+		@moz-animation-iteration-count: infinite
+		animation-iteration-count: infinite
+
+		@keyframes pulse
+			0%
+				-webkit-transform: scale(1)
+				opacity: 0.8
+			25%
+				-webkit-transform: scale(1.2)
+				opacity: 0.9
+			50%
+				-webkit-transform: scale(1.3)
+				opacity: 1
+			75%
+				-webkit-transform: scale(1.2)
+				opacity: 0.9
+			100%
+				-webkit-transform: scale(1)
+				opacity: 0.8
+
 	.weather
 		margin: 0 0 0 30px
 		position: relative
@@ -176,9 +219,25 @@ export default {
 		color: base.$white
 		border: none
 		margin: 15px
-		margin-right: 25px
+		margin-right: 35px
 		padding: 6px 10px
+		&:hover .tooltiptext
+			visibility: visible
+		.tooltiptext
+			visiblity: hidden
+			color: red
+			text-align: center
+			background-color: pink
+			position: absolute
+			z-index: 1
 
+	img
+		width: 50px
+		height: 50px
+		align-self: flex-end
+		margin-right: 30px
+		position: relative
+		top: 5px
 footer
 	//align-self: end
 	bottom: -100px
@@ -225,6 +284,29 @@ footer
 			position: relative
 			top: 7px
 			margin-right: 5px
+			@-webkit-animation: pulse 2s ease-in
+			@-moz-animation: pulse 2s ease-in
+			animation: pulse 2s ease-in
+			@webkit-animation-iteration-count: infinite
+			@moz-animation-iteration-count: infinite
+			animation-iteration-count: infinite
+
+			@keyframes pulse
+				0%
+					-webkit-transform: scale(1)
+					opacity: 0.8
+				25%
+					-webkit-transform: scale(1.2)
+					opacity: 0.9
+				50%
+					-webkit-transform: scale(1.3)
+					opacity: 1
+				75%
+					-webkit-transform: scale(1.2)
+					opacity: 0.9
+				100%
+					-webkit-transform: scale(1)
+					opacity: 0.8
 
 	.patient-location
 		display: flex
@@ -260,6 +342,7 @@ footer
 			iframe
 				width: 100%
 				height: 455px
+
 	footer
 		bottom: -135px
 </style>
