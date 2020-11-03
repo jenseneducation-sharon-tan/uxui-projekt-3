@@ -51,6 +51,9 @@ export default {
             padding: 10px
             border: none
             width: 200px
+@media (max-width: 918px)
+    p
+        font-size: 13px
 @media (max-width: base.$breakpoint)
     p
         font-size: 11px
@@ -76,6 +79,8 @@ export default {
         .booking-btn-div
             width:40%
 @media (max-width: 375px)
+    p
+        font-size: 10px
     .booking
         .booking-info
             width: 60%
