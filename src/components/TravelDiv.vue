@@ -66,7 +66,7 @@ export default {
         .info-group-1
             display: flex
             flex-direction: row
-            justify-content: start
+            justify-content: flex-start
             align-items: center
             width: 60%
             margin-right: 1rem 
