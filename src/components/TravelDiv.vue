@@ -58,6 +58,7 @@ export default {
     margin: 1rem
     padding: 1rem
     border-radius: 20px
+    width: 756px
     .info
         display: flex
         flex-direction: row
@@ -65,7 +66,7 @@ export default {
         .info-group-1
             display: flex
             flex-direction: row
-            justify-content: space-around
+            justify-content: start
             align-items: center
             width: 60%
             margin-right: 1rem 
@@ -84,7 +85,7 @@ export default {
         .info-group-2
             display: flex
             flex-direction: row
-            justify-content: space-around
+            justify-content: space-between
             align-items: center
             width: 35%
             .status
@@ -101,6 +102,7 @@ export default {
                 cursor: pointer
                 .toggleInfo
                     color: base.$grey
+                    margin: 0
     .detail
         .time
             display: flex
@@ -114,6 +116,7 @@ export default {
     p
         font-size: 13px
     .travel-div
+        width: 90%
         .info
             display: flex
             flex-direction: column
@@ -123,6 +126,5 @@ export default {
                 width: 100%
                 margin: 0
             .info-group-2
-                justify-content: space-between
                 width: 100%
 </style>

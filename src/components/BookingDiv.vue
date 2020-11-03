@@ -37,11 +37,11 @@ export default {
     flex-direction: column
     width: 28%
     .booking-info
+        text-align: left
         .booking-info-name, .booking-info-location
             display: flex
             flex-direction: row
-            justify-content: center
-            align-items: center
+            justify-content: start
             .bold
                 font-weight: 600
     .booking-btn-div
