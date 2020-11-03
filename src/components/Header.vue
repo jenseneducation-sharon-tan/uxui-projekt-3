@@ -3,8 +3,18 @@
     <router-link to="/">
       <img class="logo" src="@/assets/logo.png" alt="" />
     </router-link>
-    <Nav v-show="loggedIn" v-bind:color="color" />
-    <div v-show="!loggedIn" class="login-container">
+
+    <Nav
+      v-if="
+        (this.$route.path !== '/' &&
+          this.$route.path !== '/registeration' &&
+          this.$route.path !== '/login') ||
+          loggedIn
+      "
+      v-bind:color="color"
+    />
+
+    <div v-else class="login-container">
       <router-link
         :class="{
           orange: this.$route.path == '/registeration',

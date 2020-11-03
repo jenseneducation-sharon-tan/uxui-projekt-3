@@ -60,7 +60,7 @@
           white: color == 'white',
           black: color == 'black',
         }"
-        >Mission</span
+        >Travel details</span
       >
     </router-link>
     <router-link
@@ -229,6 +229,15 @@ a
 .mission
     img
        margin-top: 6px
+       position: relative
+       animation: bound-x 0.7s ease-in-out infinite alternate-reverse
+
+@keyframes bound-x
+  0%
+    left: -10px
+
+  100%
+    left: 10px
 
 
 .travel-log
