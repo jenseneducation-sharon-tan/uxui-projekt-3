@@ -49,8 +49,24 @@ components: {
 	height: 100vh
 	max-width: base.$breakpoint
 	margin: auto
-	img
+	
+	.persona_image
 		margin-top:50px
+		@keyframes float 
+			0% 
+				
+				transform: translatey(0px)
+	
+			50% 
+				
+				transform: translatey(-20px)
+	
+			100% 
+				
+				transform: translatey(0px)
+		transform: translatey(0px)
+		animation: float 6s ease-in-out infinite
+
 
 .name
 	
