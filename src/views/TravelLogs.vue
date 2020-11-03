@@ -65,8 +65,8 @@ export default {
 <style lang="sass" scoped>
 @use '@/style/base'
 .TravelLogs
-    text-align: center
     .travel-container
+        text-align: center
         background: base.$light-grey
         padding-bottom:2rem
         .travelLog-title
@@ -74,6 +74,9 @@ export default {
             padding-bottom:1rem
         .travel-logs
             padding: 2rem
+            display: flex
+            flex-direction: column
+            align-items: center
 @media screen and (max-width: base.$breakpoint)
     .TravelLogs
         .travel-container
