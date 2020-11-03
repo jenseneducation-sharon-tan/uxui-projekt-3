@@ -7,19 +7,19 @@
         <div class="call-one">
           <img src="../assets/missed-call.png" alt="missed call" />
           <span class="name">Akinyi Matata</span>
-          <span class="time">15:30,2020-10-13</span>
+          <span class="time">15:30, 2020-10-13</span>
           <button class="button-small">Call</button>
         </div>
         <div class="call-one">
           <img src="../assets/call-received.png" alt="received call" />
           <span class="name">Akinyi Matata</span>
-          <span class="time">14:50,2020-10-13</span>
+          <span class="time">14:50, 2020-10-13</span>
           <button class="button-small">Call</button>
         </div>
         <div class="call-one">
           <img src="../assets/call-outgoing.png" alt="call-outgoing" />
           <span class="name">Nia Shwalli</span>
-          <span class="time">11:20,2020-10-12</span>
+          <span class="time">11:20, 2020-10-12</span>
           <button class="button-small">Call</button>
         </div>
       </section>
@@ -97,7 +97,7 @@ export default {
         font-size: 36px
 
     .call-page .calls .call-one
-        width: 70%
+        width: 756px
         align-self: center
         height: 60px
         img
@@ -108,7 +108,7 @@ export default {
             font-size: 18px
         .time
             font-size: 14px
-            margin-right:  25em
+            margin-right:  12em
         
     .button-small
         width: 58px

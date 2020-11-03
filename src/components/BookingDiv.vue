@@ -36,20 +36,25 @@ export default {
     display: flex
     flex-direction: column
     width: 28%
+    min-width: 300px
     .booking-info
+        text-align: left
         .booking-info-name, .booking-info-location
             display: flex
             flex-direction: row
-            justify-content: center
-            align-items: center
+            justify-content: start
             .bold
                 font-weight: 600
     .booking-btn-div
         .booking-btn
             +base.common-button-orange
+            margin-top: 15px
             padding: 10px
             border: none
             width: 200px
+@media (max-width: 918px)
+    p
+        font-size: 13px
 @media (max-width: base.$breakpoint)
     p
         font-size: 11px
@@ -75,6 +80,8 @@ export default {
         .booking-btn-div
             width:40%
 @media (max-width: 375px)
+    p
+        font-size: 10px
     .booking
         .booking-info
             width: 60%

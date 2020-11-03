@@ -47,8 +47,8 @@ export default {
 <style lang='sass' scoped>
 @use '@/style/base'
 .current-bookings
-    text-align: center
     .booking-container
+        text-align: center
         background: base.$light-grey
         padding-bottom:2rem
         height: 80vh

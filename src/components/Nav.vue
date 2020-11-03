@@ -35,7 +35,7 @@
     <router-link
       v-if="mission"
       class="nav_icon mission"
-      to="/ravel-details"
+      to="/travel-details"
       @mouseover.native="active1 = true"
       @mouseleave.native="active1 = false"
     >
@@ -93,28 +93,31 @@
         >Travel logs</span
       >
     </router-link>
+
     <router-link
       class="nav_icon profile"
-      to="/"
+      to="/profile"
       @mouseover.native="active3 = true"
       @mouseleave.native="active3 = false"
     >
       <img
         v-show="
-          this.$route.path !== '/' && color !== undefined && active3 !== true
+          this.$route.path !== '/profile' &&
+            color !== undefined &&
+            active3 !== true
         "
         :src="require(`@/assets/person-${color}.png`)"
         alt=""
       />
       <img
-        v-show="this.$route.path === '/' || active3 == true"
+        v-show="this.$route.path === '/profile' || active3 == true"
         src="@/assets/person-orange.png"
         alt=""
       />
       <span
         :class="{
           active: active3 == true,
-          isOpen: this.$route.path === '/',
+          isOpen: this.$route.path === '/profile',
           white: color == 'white',
           black: color == 'black',
         }"
