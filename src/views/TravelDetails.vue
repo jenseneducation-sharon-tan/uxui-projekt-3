@@ -267,7 +267,8 @@ footer
 
 footer
 	//align-self: end
-	bottom: -120px
+	bottom: 0
+	position: sticky
 
 @media (min-width: base.$breakpoint)
 	.travel-container
@@ -348,7 +349,7 @@ footer
 				width: 100%
 				height: 100%
 				p
-					padding-top: 70px
+					padding-top: 10%
 				.buttons
 					flex-direction: column
 					align-items: center
@@ -362,6 +363,7 @@ footer
 						height: 40px
 						margin-left: 0
 			.voice-type
+				padding-bottom: 10%
 				textarea
 					width: 85%
 					height: 70px
@@ -393,9 +395,11 @@ footer
 
 			iframe
 				width: 100%
-				height: 75%
+				height: 80%
+			.destination-info
+				padding: 20px 0
 
 	footer
-		position: absolute
+		position: static
 		bottom: 0
 </style>
