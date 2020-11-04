@@ -60,7 +60,7 @@ header
     .logo
       text-align: left
     img
-      height:40px
+      height:32px
       margin: 0.7em auto 0 0.7em
       cursor: pointer
       z-index: 1

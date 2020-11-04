@@ -1,5 +1,5 @@
 <template>
-  <div class="travel-container">
+  <div class="travel-container wrapper">
     <Header />
     <div class="sub-header">
       <div class="top">
@@ -49,15 +49,14 @@
             <button class="voice" @click="toggleMic" v-show="!showMic">
               Voice Typing
               <!--  <span class="tooltiptext">Click and hold to talk</span> -->
-            </button >
-			<div class="mic" v-show="showMic"></div>
+            </button>
+            <div class="mic" v-show="showMic"></div>
             <img
-              src="../assets/mic.svg" 
+              src="../assets/mic.svg"
               alt="microphone"
               @click="toggleMic"
               v-show="showMic"
             />
-			
           </div>
         </div>
       </div>
@@ -92,6 +91,7 @@ export default {
 
 .travel-container
 	width: 100%
+	min
 
 .sub-header
 	font-family: base.$font-Roboto
@@ -150,7 +150,7 @@ export default {
 
 .patient-location
 	//width: 100%
-	height: 500px
+
 	.left
 		iframe
 			width: 100%
@@ -171,7 +171,6 @@ export default {
 
 .bottom
 	margin: 0
-	height: 300px
 	background-color: base.$light-grey
 	.patient-info
 		font-size: 24px
@@ -238,8 +237,13 @@ export default {
 		align-self: flex-end
 		margin-right: 30px
 		position: relative
-		top: -2px
-	
+		top: 5px
+
+footer
+	//align-self: end
+	position: sticky
+	bottom: 0
+
 	.mic
 		width: 14px
 		height: 13px
@@ -259,22 +263,25 @@ export default {
 				box-shadow: 0px 0px 5px 13px rgba(255,0,0,.3)
 			90%
 				box-shadow: 0px 0px 5px 13px rgba(255,0,0,0)
-		
+
 
 footer
 	//align-self: end
-	bottom: -120px
+	bottom: 0
+	position: sticky
 
 @media (min-width: base.$breakpoint)
 	.travel-container
-		display: flex
 		flex-direction: column
 		align-items: center
-		height: 600px
+
+
 		.sub-header
 			width: 100%
 		.patient-location
 			width: 100%
+
+
 	.top
 		flex-direction: column
 		align-items:  center
@@ -296,9 +303,9 @@ footer
 		.weather
 			display: initial
 			color: white
-			background-color: black
-			position: relative
+			background-color: transparent
 			top: 3px
+			position: relative
 			margin-right: 5px
 			margin-left: 20px
 
@@ -333,6 +340,7 @@ footer
 
 	.patient-location
 		display: flex
+
 		.right
 			width: 40%
 			flex-direction: column
@@ -341,7 +349,7 @@ footer
 				width: 100%
 				height: 100%
 				p
-					padding-top: 70px
+					padding-top: 10%
 				.buttons
 					flex-direction: column
 					align-items: center
@@ -355,6 +363,7 @@ footer
 						height: 40px
 						margin-left: 0
 			.voice-type
+				padding-bottom: 10%
 				textarea
 					width: 85%
 					height: 70px
@@ -386,8 +395,11 @@ footer
 
 			iframe
 				width: 100%
-				height: 455px
+				height: 80%
+			.destination-info
+				padding: 20px 0
 
 	footer
-		bottom: -135px
+		position: static
+		bottom: 0
 </style>
