@@ -3,7 +3,7 @@
 <div class="wrapper">
 	<Header class="header"/>
 <div class="profile">
-	<img class="persona_image"  alt="" src="../assets/persona.png" >
+	<figure><img class="persona_image"  alt="" src="../assets/persona.png" ></figure>
 	<p class="name">Alamini Gaalav</p>
 	<div class="details">
 		<div class="address">
@@ -49,24 +49,23 @@ components: {
 	height: 100vh
 	max-width: base.$breakpoint
 	margin: auto
-	
+
 	.persona_image
 		margin-top:50px
-		@keyframes float 
-			0% 
-				
-				transform: translatey(0px)
-	
-			50% 
-				
-				transform: translatey(-20px)
-	
-			100% 
-				
-				transform: translatey(0px)
-		transform: translatey(0px)
-		animation: float 6s ease-in-out infinite
 
+		animation: spin 1s ease infinite
+
+		@keyframes spin 
+			30%  
+				transform: scale(1.2)
+			40%, 60%
+				transform: rotate(-20deg) scale(1.2)
+			50%
+				transform: rotate(20deg) scale(1.2)
+			70%
+				transform: rotate(0deg) scale(1.2)
+			100%
+				transform: scale(1)
 
 .name
 	
@@ -94,6 +93,21 @@ components: {
 		width: 80%
 		img
 			margin: 0px 10px 5px 0px
+			animation: float 6s ease-in-out infinite
+			@keyframes float 
+				0% 
+				
+					transform: translatey(0px)
+	
+				50% 
+				
+					transform: translatey(-5px)
+	
+				100% 
+				
+					transform: translatey(0px)
+				
+				
 
 		span
 			margin: 0px 10px 5px 0px
