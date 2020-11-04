@@ -91,7 +91,7 @@ export default {
 
 .travel-container
 	width: 100%
-	
+
 
 .sub-header
 	font-family: base.$font-Roboto
@@ -239,11 +239,6 @@ export default {
 		position: relative
 		top: 5px
 
-footer
-	//align-self: end
-	position: sticky
-	bottom: 0
-
 	.mic
 		width: 14px
 		height: 13px
@@ -264,9 +259,6 @@ footer
 			90%
 				box-shadow: 0px 0px 5px 13px rgba(255,0,0,0)
 
-
-footer
-	//align-self: end
 
 @media (min-width: base.$breakpoint)
 	.travel-container
