@@ -1,5 +1,5 @@
 <template>
-  <div class="travel-container">
+  <div class="travel-container wrapper">
     <Header />
     <div class="sub-header">
       <div class="top">
@@ -50,6 +50,7 @@
               Voice Typing
               <!--  <span class="tooltiptext">Click and hold to talk</span> -->
             </button>
+            <div class="mic" v-show="showMic"></div>
             <img
               src="../assets/mic.svg"
               alt="microphone"
@@ -90,6 +91,7 @@ export default {
 
 .travel-container
 	width: 100%
+	min
 
 .sub-header
 	font-family: base.$font-Roboto
@@ -148,7 +150,7 @@ export default {
 
 .patient-location
 	//width: 100%
-	height: 500px
+
 	.left
 		iframe
 			width: 100%
@@ -169,7 +171,6 @@ export default {
 
 .bottom
 	margin: 0
-	height: 300px
 	background-color: base.$light-grey
 	.patient-info
 		font-size: 24px
@@ -230,7 +231,6 @@ export default {
 			background-color: pink
 			position: absolute
 			z-index: 1
-
 	img
 		width: 50px
 		height: 50px
@@ -238,20 +238,50 @@ export default {
 		margin-right: 30px
 		position: relative
 		top: 5px
+
 footer
 	//align-self: end
-	bottom: -100px
+	position: sticky
+	bottom: 0
+
+	.mic
+		width: 14px
+		height: 13px
+		border-radius: 50%
+		align-self: flex-end
+		margin-right: 48px
+		position: relative
+		bottom: -20px
+		animation-name: pulse1
+		animation-duration: 1.5s
+		animation-iteration-count: infinite
+		animation-timing-function: linear
+		@keyframes pulse1
+			0%
+				box-shadow: 0px 0px 5px 0px rgba(255,0,0,.3)
+			65%
+				box-shadow: 0px 0px 5px 13px rgba(255,0,0,.3)
+			90%
+				box-shadow: 0px 0px 5px 13px rgba(255,0,0,0)
+
+
+footer
+	//align-self: end
+	bottom: 0
+	position: sticky
 
 @media (min-width: base.$breakpoint)
 	.travel-container
-		display: flex
 		flex-direction: column
 		align-items: center
-		height: 600px
+
+
 		.sub-header
 			width: 100%
 		.patient-location
 			width: 100%
+
+
 	.top
 		flex-direction: column
 		align-items:  center
@@ -273,9 +303,9 @@ footer
 		.weather
 			display: initial
 			color: white
-			background-color: black
+			background-color: transparent
+			top: 3px
 			position: relative
-			top: -7px
 			margin-right: 5px
 			margin-left: 20px
 
@@ -310,6 +340,7 @@ footer
 
 	.patient-location
 		display: flex
+
 		.right
 			width: 40%
 			flex-direction: column
@@ -318,7 +349,7 @@ footer
 				width: 100%
 				height: 100%
 				p
-					padding-top: 70px
+					padding-top: 10%
 				.buttons
 					flex-direction: column
 					align-items: center
@@ -332,17 +363,43 @@ footer
 						height: 40px
 						margin-left: 0
 			.voice-type
+				padding-bottom: 10%
 				textarea
 					width: 85%
 					height: 70px
 					border-radius: 10px
+				img
+					width: 50px
+					height: 50px
+				.mic
+					width: 14px
+					height: 13px
+					border-radius: 50%
+					align-self: flex-end
+					margin-right: 48px
+					position: relative
+					bottom: -20px
+					animation-name: pulse1
+					animation-duration: 1.5s
+					animation-iteration-count: infinite
+					animation-timing-function: linear
+					@keyframes pulse1
+						0%
+							box-shadow: 0px 0px 5px 0px rgba(255,0,0,.3)
+						65%
+							box-shadow: 0px 0px 5px 13px rgba(255,0,0,.3)
+						90%
+							box-shadow: 0px 0px 5px 13px rgba(255,0,0,0)
 		.left
 			width: 60%
 
 			iframe
 				width: 100%
-				height: 455px
+				height: 80%
+			.destination-info
+				padding: 20px 0
 
 	footer
-		bottom: -135px
+		position: static
+		bottom: 0
 </style>
