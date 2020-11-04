@@ -61,7 +61,7 @@ header
       text-align: left
     img
       height:32px
-      margin: 0.7em auto 0 0.7em
+      margin: .5em auto .1em .7em
       cursor: pointer
       z-index: 1
       position: relative
