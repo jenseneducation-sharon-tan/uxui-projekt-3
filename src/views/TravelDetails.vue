@@ -89,6 +89,11 @@ export default {
 <style lang="sass" scoped>
 @use '@/style/base.sass'
 
+=flex-column-align-center()
+	display: flex
+	flex-direction: column
+	align-items: center
+
 .travel-container
 	width: 100%
 
@@ -100,20 +105,13 @@ export default {
 	display: flex
 	justify-content: center
 	h1
-		font-family: base.$font-Alfa
-		font-size: 24px
 		margin: 0
 	img
 		width: 40%
 		position: relative
 		bottom: -6px
 		margin-right: 5px
-		@-webkit-animation: pulse 2s ease-in
-		@-moz-animation: pulse 2s ease-in
-		animation: pulse 2s ease-in
-		@webkit-animation-iteration-count: infinite
-		@moz-animation-iteration-count: infinite
-		animation-iteration-count: infinite
+		+base.sun-animation()
 
 		@keyframes pulse
 			0%
@@ -142,15 +140,12 @@ export default {
 		color: base.$white
 		background-color: base.$black
 		padding: 10px
-		//width: 100%
 		text-align: center
 		margin: 16px 0 0 0
 	.weather
 		display: none
 
 .patient-location
-	//width: 100%
-
 	.left
 		iframe
 			width: 100%
@@ -201,9 +196,7 @@ export default {
 		height: 35px
 
 .voice-type
-	display: flex
-	flex-direction: column
-	align-items: center
+	+flex-column-align-center()
 
 	textarea
 		width: 85%
@@ -236,6 +229,7 @@ export default {
 		height: 50px
 		align-self: flex-end
 		margin-right: 30px
+		margin-bottom: 30px
 		position: relative
 		top: 5px
 
@@ -246,11 +240,8 @@ export default {
 		align-self: flex-end
 		margin-right: 48px
 		position: relative
-		bottom: -20px
-		animation-name: pulse1
-		animation-duration: 1.5s
-		animation-iteration-count: infinite
-		animation-timing-function: linear
+		bottom: -25px
+		+base.mic-animation()
 		@keyframes pulse1
 			0%
 				box-shadow: 0px 0px 5px 0px rgba(255,0,0,.3)
@@ -262,19 +253,15 @@ export default {
 
 @media (min-width: base.$breakpoint)
 	.travel-container
-		flex-direction: column
-		align-items: center
-
+		+flex-column-align-center()
 
 		.sub-header
 			width: 100%
 		.patient-location
 			width: 100%
 
-
 	.top
-		flex-direction: column
-		align-items:  center
+		+flex-column-align-center()
 		h1
 			font-size: 36px
 			margin: 15px
@@ -304,12 +291,7 @@ export default {
 			position: relative
 			top: 7px
 			margin-right: 5px
-			@-webkit-animation: pulse 2s ease-in
-			@-moz-animation: pulse 2s ease-in
-			animation: pulse 2s ease-in
-			@webkit-animation-iteration-count: infinite
-			@moz-animation-iteration-count: infinite
-			animation-iteration-count: infinite
+			+base.sun-animation()
 
 			@keyframes pulse
 				0%
@@ -368,11 +350,8 @@ export default {
 					align-self: flex-end
 					margin-right: 48px
 					position: relative
-					bottom: -20px
-					animation-name: pulse1
-					animation-duration: 1.5s
-					animation-iteration-count: infinite
-					animation-timing-function: linear
+					bottom: -25px
+					+base.mic-animation()
 					@keyframes pulse1
 						0%
 							box-shadow: 0px 0px 5px 0px rgba(255,0,0,.3)
