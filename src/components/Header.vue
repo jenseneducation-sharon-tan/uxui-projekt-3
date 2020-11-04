@@ -80,7 +80,9 @@ header
         justify-content: space-between
         background: base.$white
         box-shadow: 0em 0.3em 8px 0.1em base.$grey
-        position: relative
+        position: sticky
+        top: 0
+        z-index: 999
 
         img
            height:50px

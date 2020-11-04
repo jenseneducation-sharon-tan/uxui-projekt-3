@@ -70,7 +70,7 @@ export default {
             justify-content: space-around
             font-family: base.$font-Roboto
             align-items: center
-           
+
             img
                 width: 18px
                 height: 18px
@@ -93,12 +93,7 @@ export default {
     &:focus
         outline: none
 
-footer
-    position: sticky
-    bottom: 0
 
-
-  
 @media screen and (min-width: base.$breakpoint)
     h1
         font-size: 36px
@@ -116,14 +111,11 @@ footer
         .time
             font-size: 14px
             margin-right:  12em
-        
+
     .button-small
         width: 58px
         height: 32px
         font-size: 18px
         &:hover
             border: 3px solid base.$red
-
-        
-        
 </style>
