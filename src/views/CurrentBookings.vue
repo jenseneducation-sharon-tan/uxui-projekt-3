@@ -55,11 +55,17 @@ export default {
         .booking-title
             background: base.$white
             padding-bottom:1rem 
+            h1
+              font-size: 36px
     .bookings
         display: flex
         padding: 2rem
 @media (max-width: base.$breakpoint)
     .current-bookings
+        .booking-container
+            .booking-title
+                h1
+                  font-size: 24px
         .bookings
             flex-direction: column
             justify-content: center
