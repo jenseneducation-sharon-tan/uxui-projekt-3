@@ -42,7 +42,7 @@ export default {
         .booking-info-name, .booking-info-location
             display: flex
             flex-direction: row
-            justify-content: start
+            justify-content: flex-start
             .bold
                 font-weight: 600
     .booking-btn-div

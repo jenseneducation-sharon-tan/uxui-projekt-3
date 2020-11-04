@@ -50,6 +50,7 @@
               Voice Typing
               <!--  <span class="tooltiptext">Click and hold to talk</span> -->
             </button>
+            <div class="mic" v-show="showMic"></div>
             <img
               src="../assets/mic.svg"
               alt="microphone"
@@ -230,7 +231,6 @@ export default {
 			background-color: pink
 			position: absolute
 			z-index: 1
-
 	img
 		width: 50px
 		height: 50px
@@ -243,6 +243,31 @@ footer
 	//align-self: end
 	position: sticky
 	bottom: 0
+
+	.mic
+		width: 14px
+		height: 13px
+		border-radius: 50%
+		align-self: flex-end
+		margin-right: 48px
+		position: relative
+		bottom: -20px
+		animation-name: pulse1
+		animation-duration: 1.5s
+		animation-iteration-count: infinite
+		animation-timing-function: linear
+		@keyframes pulse1
+			0%
+				box-shadow: 0px 0px 5px 0px rgba(255,0,0,.3)
+			65%
+				box-shadow: 0px 0px 5px 13px rgba(255,0,0,.3)
+			90%
+				box-shadow: 0px 0px 5px 13px rgba(255,0,0,0)
+
+
+footer
+	//align-self: end
+	bottom: -120px
 
 @media (min-width: base.$breakpoint)
 	.travel-container
@@ -341,6 +366,28 @@ footer
 					width: 85%
 					height: 70px
 					border-radius: 10px
+				img
+					width: 50px
+					height: 50px
+				.mic
+					width: 14px
+					height: 13px
+					border-radius: 50%
+					align-self: flex-end
+					margin-right: 48px
+					position: relative
+					bottom: -20px
+					animation-name: pulse1
+					animation-duration: 1.5s
+					animation-iteration-count: infinite
+					animation-timing-function: linear
+					@keyframes pulse1
+						0%
+							box-shadow: 0px 0px 5px 0px rgba(255,0,0,.3)
+						65%
+							box-shadow: 0px 0px 5px 13px rgba(255,0,0,.3)
+						90%
+							box-shadow: 0px 0px 5px 13px rgba(255,0,0,0)
 		.left
 			width: 60%
 
