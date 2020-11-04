@@ -91,7 +91,7 @@ export default {
 
 .travel-container
 	width: 100%
-	min
+	
 
 .sub-header
 	font-family: base.$font-Roboto

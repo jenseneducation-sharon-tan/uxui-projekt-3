@@ -82,14 +82,21 @@ export default {
 
 .button-small
     +base.common-button-orange()
-    width: 40px
-    height: 21px
-    cursor: pointer
+    width: 48px
+    height: 28px
     border: base.$orange
     font-family: base.$font-Roboto
     font-size: 12px
+    text-align: center
+    &:hover
+        border: 2px solid base.$red
     &:focus
         outline: none
+
+footer
+    position: sticky
+    bottom: 0
+
 
   
 @media screen and (min-width: base.$breakpoint)
