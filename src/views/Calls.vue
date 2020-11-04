@@ -45,9 +45,7 @@ export default {
 
 .call-page
     text-align: center
-    display: flex
-    flex-direction: column
-    align-items: center
+    +base.flex-column-align-center()
     margin: auto
 
     .calls

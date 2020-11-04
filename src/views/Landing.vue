@@ -75,9 +75,7 @@ a
 	flex-direction: column
 
 .text
-	display: flex
-	flex-direction: column
-	align-self: center
+	+base.flex-column-align-center()
 	justify-content: center
 	h1
 		font-family: base.$font-Alfa

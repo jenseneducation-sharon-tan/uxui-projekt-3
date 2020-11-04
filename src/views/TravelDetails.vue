@@ -89,15 +89,9 @@ export default {
 <style lang="sass" scoped>
 @use '@/style/base.sass'
 
-=flex-column-align-center()
-	display: flex
-	flex-direction: column
-	align-items: center
-
 .travel-container
 	width: 100%
-
-
+	
 .sub-header
 	font-family: base.$font-Roboto
 
@@ -112,7 +106,6 @@ export default {
 		bottom: -6px
 		margin-right: 5px
 		+base.sun-animation()
-
 		@keyframes pulse
 			0%
 				-webkit-transform: scale(1)
@@ -196,7 +189,7 @@ export default {
 		height: 35px
 
 .voice-type
-	+flex-column-align-center()
+	+base.flex-column-align-center()
 
 	textarea
 		width: 85%
@@ -253,7 +246,7 @@ export default {
 
 @media (min-width: base.$breakpoint)
 	.travel-container
-		+flex-column-align-center()
+		+base.flex-column-align-center()
 
 		.sub-header
 			width: 100%
@@ -261,7 +254,7 @@ export default {
 			width: 100%
 
 	.top
-		+flex-column-align-center()
+		+base.flex-column-align-center()
 		h1
 			font-size: 36px
 			margin: 15px
@@ -312,19 +305,16 @@ export default {
 
 	.patient-location
 		display: flex
-
 		.right
 			width: 40%
-			flex-direction: column
-			align-items: center
+			+base.flex-column-align-center()
 			.bottom
 				width: 100%
 				height: 100%
 				p
 					padding-top: 10%
 				.buttons
-					flex-direction: column
-					align-items: center
+					+base.flex-column-align-center()
 					.hospital
 						width: 150px
 						height: 40px
