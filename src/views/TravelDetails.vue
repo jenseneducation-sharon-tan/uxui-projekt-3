@@ -1,5 +1,5 @@
 <template>
-  <div class="travel-container">
+  <div class="travel-container wrapper">
     <Header />
     <div class="sub-header">
       <div class="top">
@@ -90,6 +90,7 @@ export default {
 
 .travel-container
 	width: 100%
+	min
 
 .sub-header
 	font-family: base.$font-Roboto
@@ -148,7 +149,7 @@ export default {
 
 .patient-location
 	//width: 100%
-	height: 500px
+
 	.left
 		iframe
 			width: 100%
@@ -169,7 +170,6 @@ export default {
 
 .bottom
 	margin: 0
-	height: 300px
 	background-color: base.$light-grey
 	.patient-info
 		font-size: 24px
@@ -238,20 +238,24 @@ export default {
 		margin-right: 30px
 		position: relative
 		top: 5px
+
 footer
 	//align-self: end
-	bottom: -100px
+	position: sticky
+	bottom: 0
 
 @media (min-width: base.$breakpoint)
 	.travel-container
-		display: flex
 		flex-direction: column
 		align-items: center
-		height: 600px
+
+
 		.sub-header
 			width: 100%
 		.patient-location
 			width: 100%
+
+
 	.top
 		flex-direction: column
 		align-items:  center
@@ -273,9 +277,9 @@ footer
 		.weather
 			display: initial
 			color: white
-			background-color: black
+			background-color: transparent
+			top: 3px
 			position: relative
-			top: -7px
 			margin-right: 5px
 			margin-left: 20px
 
@@ -310,6 +314,7 @@ footer
 
 	.patient-location
 		display: flex
+
 		.right
 			width: 40%
 			flex-direction: column
@@ -341,8 +346,9 @@ footer
 
 			iframe
 				width: 100%
-				height: 455px
+				height: 75%
 
 	footer
-		bottom: -135px
+		position: absolute
+		bottom: 0
 </style>
