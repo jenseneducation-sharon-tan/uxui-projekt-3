@@ -267,8 +267,6 @@ footer
 
 footer
 	//align-self: end
-	bottom: 0
-	position: sticky
 
 @media (min-width: base.$breakpoint)
 	.travel-container
@@ -398,8 +396,4 @@ footer
 				height: 80%
 			.destination-info
 				padding: 20px 0
-
-	footer
-		position: static
-		bottom: 0
 </style>
