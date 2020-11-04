@@ -84,10 +84,12 @@ export default {
     +base.common-button-orange()
     width: 40px
     height: 21px
-    cursor: pointer
     border: base.$orange
     font-family: base.$font-Roboto
     font-size: 12px
+    text-align: center
+    &:hover
+        border: 2px solid base.$red
     &:focus
         outline: none
 
