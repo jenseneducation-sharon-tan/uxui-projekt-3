@@ -96,7 +96,7 @@ export default {
 
 .travel-container
 	width: 100%
-	min
+
 
 .sub-header
 	font-family: base.$font-Roboto
@@ -249,8 +249,7 @@ export default {
 				box-shadow: 0px 0px 5px 13px rgba(255,0,0,.3)
 			90%
 				box-shadow: 0px 0px 5px 13px rgba(255,0,0,0)
-	
-	
+
 
 @media (min-width: base.$breakpoint)
 	.travel-container
@@ -368,8 +367,4 @@ export default {
 				height: 80%
 			.destination-info
 				padding: 20px 0
-
-	footer
-		position: static
-		bottom: 0
 </style>
