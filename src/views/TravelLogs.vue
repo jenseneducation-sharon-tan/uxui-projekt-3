@@ -80,9 +80,7 @@ export default {
               font-size: 36px
         .travel-logs
             padding: 2rem
-            display: flex
-            flex-direction: column
-            align-items: center
+            +base.flex-column-align-center()
 @media screen and (max-width: base.$breakpoint)
     .TravelLogs
         .travel-container

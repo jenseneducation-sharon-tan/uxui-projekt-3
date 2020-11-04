@@ -74,16 +74,14 @@ components: {
 	font-weight: bold
 	
 .details
+	+base.flex-column-align-center()
 	font-size: 12px
 	font-weight: 400
 	display: flex
 	border: 2px solid base.$orange
 	box-shadow: 5px 5px 10px base.$grey
 	border-radius: 5px
-	display: flex
-	flex-direction: column
 	margin: 10px auto
-	align-items: center
 	width: 80%
 	div
 		margin:20px
@@ -117,8 +115,7 @@ header
 	display: none
 
 .buttons
-	display: flex
-	flex-direction: row
+	+base.flex-row-justify-center()
 	margin:20px
 	justify-content: space-evenly
 	
