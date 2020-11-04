@@ -72,6 +72,8 @@ export default {
         .travelLog-title
             background: base.$white
             padding-bottom:1rem
+            h1
+              font-size: 36px
         .travel-logs
             padding: 2rem
             display: flex
@@ -80,6 +82,9 @@ export default {
 @media screen and (max-width: base.$breakpoint)
     .TravelLogs
         .travel-container
+            .travelLog-title
+                h1
+                  font-size: 24px
             .travel-logs
                 padding: 0
 </style>
