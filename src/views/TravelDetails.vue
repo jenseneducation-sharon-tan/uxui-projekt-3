@@ -91,8 +91,7 @@ export default {
 
 .travel-container
 	width: 100%
-	min
-
+	
 .sub-header
 	font-family: base.$font-Roboto
 
@@ -100,21 +99,13 @@ export default {
 	display: flex
 	justify-content: center
 	h1
-		font-family: base.$font-Alfa
-		font-size: 24px
 		margin: 0
 	img
 		width: 40%
 		position: relative
 		bottom: -6px
 		margin-right: 5px
-		@-webkit-animation: pulse 2s ease-in
-		@-moz-animation: pulse 2s ease-in
-		animation: pulse 2s ease-in
-		@webkit-animation-iteration-count: infinite
-		@moz-animation-iteration-count: infinite
-		animation-iteration-count: infinite
-
+		+base.sun-animation()
 		@keyframes pulse
 			0%
 				-webkit-transform: scale(1)
@@ -142,15 +133,12 @@ export default {
 		color: base.$white
 		background-color: base.$black
 		padding: 10px
-		//width: 100%
 		text-align: center
 		margin: 16px 0 0 0
 	.weather
 		display: none
 
 .patient-location
-	//width: 100%
-
 	.left
 		iframe
 			width: 100%
@@ -201,9 +189,7 @@ export default {
 		height: 35px
 
 .voice-type
-	display: flex
-	flex-direction: column
-	align-items: center
+	+base.flex-column-align-center()
 
 	textarea
 		width: 85%
@@ -236,13 +222,9 @@ export default {
 		height: 50px
 		align-self: flex-end
 		margin-right: 30px
+		margin-bottom: 30px
 		position: relative
 		top: 5px
-
-footer
-	//align-self: end
-	position: sticky
-	bottom: 0
 
 	.mic
 		width: 14px
@@ -251,11 +233,8 @@ footer
 		align-self: flex-end
 		margin-right: 48px
 		position: relative
-		bottom: -20px
-		animation-name: pulse1
-		animation-duration: 1.5s
-		animation-iteration-count: infinite
-		animation-timing-function: linear
+		bottom: -25px
+		+base.mic-animation()
 		@keyframes pulse1
 			0%
 				box-shadow: 0px 0px 5px 0px rgba(255,0,0,.3)
@@ -265,26 +244,17 @@ footer
 				box-shadow: 0px 0px 5px 13px rgba(255,0,0,0)
 
 
-footer
-	//align-self: end
-	bottom: 0
-	position: sticky
-
 @media (min-width: base.$breakpoint)
 	.travel-container
-		flex-direction: column
-		align-items: center
-
+		+base.flex-column-align-center()
 
 		.sub-header
 			width: 100%
 		.patient-location
 			width: 100%
 
-
 	.top
-		flex-direction: column
-		align-items:  center
+		+base.flex-column-align-center()
 		h1
 			font-size: 36px
 			margin: 15px
@@ -314,12 +284,7 @@ footer
 			position: relative
 			top: 7px
 			margin-right: 5px
-			@-webkit-animation: pulse 2s ease-in
-			@-moz-animation: pulse 2s ease-in
-			animation: pulse 2s ease-in
-			@webkit-animation-iteration-count: infinite
-			@moz-animation-iteration-count: infinite
-			animation-iteration-count: infinite
+			+base.sun-animation()
 
 			@keyframes pulse
 				0%
@@ -340,19 +305,16 @@ footer
 
 	.patient-location
 		display: flex
-
 		.right
 			width: 40%
-			flex-direction: column
-			align-items: center
+			+base.flex-column-align-center()
 			.bottom
 				width: 100%
 				height: 100%
 				p
 					padding-top: 10%
 				.buttons
-					flex-direction: column
-					align-items: center
+					+base.flex-column-align-center()
 					.hospital
 						width: 150px
 						height: 40px
@@ -378,11 +340,8 @@ footer
 					align-self: flex-end
 					margin-right: 48px
 					position: relative
-					bottom: -20px
-					animation-name: pulse1
-					animation-duration: 1.5s
-					animation-iteration-count: infinite
-					animation-timing-function: linear
+					bottom: -25px
+					+base.mic-animation()
 					@keyframes pulse1
 						0%
 							box-shadow: 0px 0px 5px 0px rgba(255,0,0,.3)
@@ -398,8 +357,4 @@ footer
 				height: 80%
 			.destination-info
 				padding: 20px 0
-
-	footer
-		position: static
-		bottom: 0
 </style>

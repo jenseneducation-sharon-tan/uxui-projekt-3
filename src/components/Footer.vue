@@ -1,40 +1,40 @@
 <template>
-    <footer>
-        <Nav v-bind:color="color" />
-        <div class="footer_desktop">
-            <span>© 2020 Eezer AB</span>
-            <div class="contact">
-                <div class="telephone">
-                    <img src="@/assets/call-orange.png" alt="" />
-                    <span>+254 567 4526</span>
-                </div>
-                <div class="email">
-                    <img src="@/assets/email.png" alt="" />
-                    <span>info@eezer.com</span>
-                </div>
-            </div>
+  <footer>
+    <Nav v-bind:color="color" />
+    <div class="footer_desktop">
+      <span>© 2020 Eezer AB</span>
+      <div class="contact">
+        <div class="telephone">
+          <img src="@/assets/call-orange.png" alt="" />
+          <span>+254 567 4526</span>
         </div>
-    </footer>
+        <div class="email">
+          <img src="@/assets/email.png" alt="" />
+          <span>info@eezer.com</span>
+        </div>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script>
 import Nav from "@/components/Nav.vue";
 export default {
-    components: {
-        Nav,
-    },
-    data: () => ({
-        color: "white",
-    }),
+  components: {
+    Nav,
+  },
+  data: () => ({
+    color: "white",
+  }),
 
-    methods: {
-        setValue(val) {
-            this.currentTab = val;
-        },
-        removeIncomingIcon() {
-            this.incomingIcon = false;
-        },
+  methods: {
+    setValue(val) {
+      this.currentTab = val;
     },
+    removeIncomingIcon() {
+      this.incomingIcon = false;
+    },
+  },
 };
 </script>
 
@@ -45,7 +45,8 @@ footer
     width: 100%
     height: 56px
     background-color: base.$black
-    position: absolute
+    bottom: 0
+    position: sticky
     margin-top: auto
     display: flex
     justify-content: center
@@ -56,6 +57,7 @@ footer
 @media (min-width: base.$breakpoint)
     footer
        height: 142px
+       position: static
 
     nav
         display: none
