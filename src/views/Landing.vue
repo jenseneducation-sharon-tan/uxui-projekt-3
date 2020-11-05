@@ -56,15 +56,26 @@ a
 	cursor: pointer
 
 .logo_image 
-	
 	align-self: center
 	justify-self: center
 	width: 120px
 	height: 150px
-	cursor: pointer
 	z-index: 1
+	animation: bounceIn 0.6s
+	@keyframes bounceIn 
+		0% 
+			opacity: 1
+			transform: scale(.3)
+		50% 
+			opacity: 1
+			transform: scale(1.05)
+		70% 
+			opacity: 1
+			transform: scale(.9)
+		100% 
+			opacity: 1
+			transform: scale(1)
 	
-
 .logo 
 	background-image: url("../assets/background-pic.png")
 	height: 100%
@@ -78,11 +89,10 @@ a
 	+base.flex-column-align-center()
 	justify-content: center
 	h1
-		font-family: base.$font-Alfa
-		font-weight: 400
 		color: base.$white
 		font-size: 48px
 		text-align: center
+		font-weight: 400
 	
 .background
 	background-color: base.$black
@@ -96,6 +106,24 @@ a
 		font-weight: 150
 		color: base.$white
 		font-size: 24px
+	@keyframes wobble-top 
+		16.65% 
+			transform: skew(-12deg)
+		33.3% 
+			transform: skew(10deg)
+		49.95% 
+			transform: skew(-6deg)
+		66.6% 
+			transform: skew(4deg)
+		83.25% 
+			transform: skew(-2deg)
+		100% 
+			transform: skew(0)
+	&:hover 
+		animation-name: wobble-top
+		animation-duration: 1s
+		animation-timing-function: ease-in-out
+		animation-iteration-count: 1
 
 header
 	display: none 
