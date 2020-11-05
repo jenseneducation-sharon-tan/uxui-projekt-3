@@ -6,10 +6,13 @@
 
     <Nav
       v-if="
-        (this.$route.path !== '/' &&
-          this.$route.path !== '/registeration' &&
-          this.$route.path !== '/login') ||
-          loggedIn
+        (this.$route.path == '/' && loggedIn == true) ||
+          this.$route.path == '/current-bookings' ||
+          this.$route.path == '/travelLogs' ||
+          this.$route.path == '/profile' ||
+          this.$route.path == '/calls' ||
+          this.$route.path == '/patient-contact' ||
+          this.$route.path == '/travel-details'
       "
       v-bind:color="color"
     />
