@@ -1,12 +1,16 @@
 <template>
-  <div class="current-bookings">
+  <div class="current-bookings wrapper">
     <Header />
     <div class="booking-container">
       <div class="booking-title">
-          <h1>Patient near me</h1>
+        <h1>Patient near me</h1>
       </div>
       <div class="bookings">
-        <BookingDiv v-for="booking in currentBookings" v-bind:key="booking.id" v-bind:booking="booking"/>
+        <BookingDiv
+          v-for="booking in currentBookings"
+          v-bind:key="booking.id"
+          v-bind:booking="booking"
+        />
       </div>
     </div>
     <Footer />
@@ -16,52 +20,56 @@
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-import BookingDiv from '@/components/BookingDiv.vue'
+import BookingDiv from "@/components/BookingDiv.vue";
 export default {
   components: {
     Header,
     Footer,
-    BookingDiv
+    BookingDiv,
   },
-  data:()=>({
-     currentBookings:[
-         {
-             id:1,
-             location:'Kissi Cultural Center',
-             date:'2020-10-13',
-             time:'15:30',
-             patient:'Akinyi Matata'
-         },
-         {
-             id:2,
-             location:'House 6, Kissi Main Village',
-             date:'2020-10-13',
-             time:'19:30',
-             patient:'Nia Shwalli'
-         },
-     ] 
+  data: () => ({
+    currentBookings: [
+      {
+        id: 1,
+        location: "Kissi Cultural Center",
+        date: "2020-10-13",
+        time: "15:30",
+        patient: "Akinyi Matata",
+      },
+      {
+        id: 2,
+        location: "House 6, Kissi Main Village",
+        date: "2020-10-13",
+        time: "19:30",
+        patient: "Nia Shwalli",
+      },
+    ],
   }),
 };
 </script>
 
-<style lang='sass' scoped>
+<style lang="sass" scoped>
 @use '@/style/base'
 .current-bookings
     .booking-container
         text-align: center
         background: base.$light-grey
         padding-bottom:2rem
-        height: 80vh
+        height: 90vh
         .booking-title
             background: base.$white
-            padding-bottom:1rem 
+            padding-bottom:1rem
+            h1
+              font-size: 36px
     .bookings
         display: flex
         padding: 2rem
 @media (max-width: base.$breakpoint)
     .current-bookings
+        .booking-container
+            .booking-title
+                h1
+                  font-size: 24px
         .bookings
-            flex-direction: column
-            justify-content: center
-            align-items: center
+            +base.flex-column-align-center()
 </style>

@@ -3,8 +3,21 @@
     <router-link to="/">
       <img class="logo" src="@/assets/logo.png" alt="" />
     </router-link>
-    <Nav v-show="loggedIn" v-bind:color="color" />
-    <div v-show="!loggedIn" class="login-container">
+
+    <Nav
+      v-if="
+        (this.$route.path == '/' && loggedIn == true) ||
+          this.$route.path == '/current-bookings' ||
+          this.$route.path == '/travelLogs' ||
+          this.$route.path == '/profile' ||
+          this.$route.path == '/calls' ||
+          this.$route.path == '/patient-contact' ||
+          this.$route.path == '/travel-details'
+      "
+      v-bind:color="color"
+    />
+
+    <div v-else class="login-container">
       <router-link
         :class="{
           orange: this.$route.path == '/registeration',
@@ -50,8 +63,8 @@ header
     .logo
       text-align: left
     img
-      height:40px
-      margin: 0.7em auto 0 0.7em
+      height:32px
+      margin: .5em auto .1em .7em
       cursor: pointer
       z-index: 1
       position: relative
@@ -70,7 +83,9 @@ header
         justify-content: space-between
         background: base.$white
         box-shadow: 0em 0.3em 8px 0.1em base.$grey
-        position: relative
+        position: sticky
+        top: 0
+        z-index: 999
 
         img
            height:50px

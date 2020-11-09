@@ -1,5 +1,5 @@
 <template>
-  <div class="travel-container">
+  <div class="travel-container wrapper">
     <Header />
     <div class="sub-header">
       <div class="top">
@@ -46,7 +46,17 @@
               rows="10"
               placeholder="Note"
             ></textarea>
-            <button class="voice">Voice Typing</button>
+            <button class="voice" @click="toggleMic" v-show="!showMic">
+              Voice Typing
+              <!--  <span class="tooltiptext">Click and hold to talk</span> -->
+            </button>
+            <div class="mic" v-show="showMic"></div>
+            <img
+              src="../assets/mic.svg"
+              alt="microphone"
+              @click="toggleMic"
+              v-show="showMic"
+            />
           </div>
         </div>
       </div>
@@ -63,6 +73,16 @@ export default {
     Header,
     Footer,
   },
+  data: function() {
+    return {
+      showMic: false,
+    };
+  },
+  methods: {
+    toggleMic() {
+      this.showMic = !this.showMic;
+    },
+  },
 };
 </script>
 
@@ -71,7 +91,7 @@ export default {
 
 .travel-container
 	width: 100%
-
+	
 .sub-header
 	font-family: base.$font-Roboto
 
@@ -79,14 +99,30 @@ export default {
 	display: flex
 	justify-content: center
 	h1
-		font-family: base.$font-Alfa
-		font-size: 24px
 		margin: 0
 	img
 		width: 40%
 		position: relative
 		bottom: -6px
 		margin-right: 5px
+		+base.sun-animation()
+		@keyframes pulse
+			0%
+				-webkit-transform: scale(1)
+				opacity: 0.8
+			25%
+				-webkit-transform: scale(1.2)
+				opacity: 0.9
+			50%
+				-webkit-transform: scale(1.3)
+				opacity: 1
+			75%
+				-webkit-transform: scale(1.2)
+				opacity: 0.9
+			100%
+				-webkit-transform: scale(1)
+				opacity: 0.8
+
 	.weather
 		margin: 0 0 0 30px
 		position: relative
@@ -97,15 +133,12 @@ export default {
 		color: base.$white
 		background-color: base.$black
 		padding: 10px
-		//width: 100%
 		text-align: center
 		margin: 16px 0 0 0
 	.weather
 		display: none
 
 .patient-location
-	//width: 100%
-	height: 500px
 	.left
 		iframe
 			width: 100%
@@ -126,7 +159,6 @@ export default {
 
 .bottom
 	margin: 0
-	height: 300px
 	background-color: base.$light-grey
 	.patient-info
 		font-size: 24px
@@ -157,9 +189,7 @@ export default {
 		height: 35px
 
 .voice-type
-	display: flex
-	flex-direction: column
-	align-items: center
+	+base.flex-column-align-center()
 
 	textarea
 		width: 85%
@@ -176,26 +206,55 @@ export default {
 		color: base.$white
 		border: none
 		margin: 15px
-		margin-right: 25px
+		margin-right: 35px
 		padding: 6px 10px
+		&:hover .tooltiptext
+			visibility: visible
+		.tooltiptext
+			visiblity: hidden
+			color: red
+			text-align: center
+			background-color: pink
+			position: absolute
+			z-index: 1
+	img
+		width: 50px
+		height: 50px
+		align-self: flex-end
+		margin-right: 30px
+		margin-bottom: 30px
+		position: relative
+		top: 5px
 
-footer
-	//align-self: end
-	bottom: -100px
+	.mic
+		width: 14px
+		height: 13px
+		border-radius: 50%
+		align-self: flex-end
+		margin-right: 48px
+		position: relative
+		bottom: -25px
+		+base.mic-animation()
+		@keyframes pulse1
+			0%
+				box-shadow: 0px 0px 5px 0px rgba(255,0,0,.3)
+			65%
+				box-shadow: 0px 0px 5px 13px rgba(255,0,0,.3)
+			90%
+				box-shadow: 0px 0px 5px 13px rgba(255,0,0,0)
+
 
 @media (min-width: base.$breakpoint)
 	.travel-container
-		display: flex
-		flex-direction: column
-		align-items: center
-		height: 600px
+		+base.flex-column-align-center()
+
 		.sub-header
 			width: 100%
 		.patient-location
 			width: 100%
+
 	.top
-		flex-direction: column
-		align-items:  center
+		+base.flex-column-align-center()
 		h1
 			font-size: 36px
 			margin: 15px
@@ -214,9 +273,9 @@ footer
 		.weather
 			display: initial
 			color: white
-			background-color: black
+			background-color: transparent
+			top: 3px
 			position: relative
-			top: -7px
 			margin-right: 5px
 			margin-left: 20px
 
@@ -225,21 +284,37 @@ footer
 			position: relative
 			top: 7px
 			margin-right: 5px
+			+base.sun-animation()
+
+			@keyframes pulse
+				0%
+					-webkit-transform: scale(1)
+					opacity: 0.8
+				25%
+					-webkit-transform: scale(1.2)
+					opacity: 0.9
+				50%
+					-webkit-transform: scale(1.3)
+					opacity: 1
+				75%
+					-webkit-transform: scale(1.2)
+					opacity: 0.9
+				100%
+					-webkit-transform: scale(1)
+					opacity: 0.8
 
 	.patient-location
 		display: flex
 		.right
 			width: 40%
-			flex-direction: column
-			align-items: center
+			+base.flex-column-align-center()
 			.bottom
 				width: 100%
 				height: 100%
 				p
-					padding-top: 70px
+					padding-top: 10%
 				.buttons
-					flex-direction: column
-					align-items: center
+					+base.flex-column-align-center()
 					.hospital
 						width: 150px
 						height: 40px
@@ -250,16 +325,36 @@ footer
 						height: 40px
 						margin-left: 0
 			.voice-type
+				padding-bottom: 10%
 				textarea
 					width: 85%
 					height: 70px
 					border-radius: 10px
+				img
+					width: 50px
+					height: 50px
+				.mic
+					width: 14px
+					height: 13px
+					border-radius: 50%
+					align-self: flex-end
+					margin-right: 48px
+					position: relative
+					bottom: -25px
+					+base.mic-animation()
+					@keyframes pulse1
+						0%
+							box-shadow: 0px 0px 5px 0px rgba(255,0,0,.3)
+						65%
+							box-shadow: 0px 0px 5px 13px rgba(255,0,0,.3)
+						90%
+							box-shadow: 0px 0px 5px 13px rgba(255,0,0,0)
 		.left
 			width: 60%
 
 			iframe
 				width: 100%
-				height: 455px
-	footer
-		bottom: -135px
+				height: 80%
+			.destination-info
+				padding: 20px 0
 </style>
