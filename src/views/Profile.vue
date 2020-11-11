@@ -53,7 +53,7 @@ components: {
 	.persona_image
 		margin-top:50px
 
-		animation: spin 1s ease infinite
+		@include base.animation(spin 1s ease infinite)
 
 		@keyframes spin 
 			30%  
@@ -74,7 +74,7 @@ components: {
 	font-weight: bold
 	
 .details
-	+base.flex-column-align-center()
+	+base.flex-column-align-center
 	font-size: 12px
 	font-weight: 400
 	display: flex
@@ -91,7 +91,7 @@ components: {
 		width: 80%
 		img
 			margin: 0px 10px 5px 0px
-			animation: float 6s ease-in-out infinite
+			@include base.animation(float 6s ease-in-out infinite)
 			@keyframes float 
 				0% 
 				
@@ -115,7 +115,7 @@ header
 	display: none
 
 .buttons
-	+base.flex-row-justify-center()
+	+base.flex-row-justify-center
 	margin:20px
 	justify-content: space-evenly
 	

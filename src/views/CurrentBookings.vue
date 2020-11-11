@@ -71,5 +71,5 @@ export default {
                 h1
                   font-size: 24px
         .bookings
-            +base.flex-column-align-center()
+            +base.flex-column-align-center
 </style>

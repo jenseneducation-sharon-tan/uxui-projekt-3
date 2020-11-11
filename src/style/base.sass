@@ -75,21 +75,6 @@ body
     border: 8px solid $red
     box-shadow: 5px 5px 10px $grey
 
-// animations
-=sun-animation()
-  @-webkit-animation: pulse 2s ease-in
-  @-moz-animation: pulse 2s ease-in
-  animation: pulse 2s ease-in
-  @webkit-animation-iteration-count: infinite
-  @moz-animation-iteration-count: infinite
-  animation-iteration-count: infinite
-
-=mic-animation()
-  animation-name: pulse1
-  animation-duration: 1.5s
-  animation-iteration-count: infinite
-  animation-timing-function: linear
-
 //flex alignment
 =flex-column-align-center()
   display: flex
@@ -109,3 +94,17 @@ h1
 
 p
   margin: 5px
+
+// mixin animation
+@mixin animation($str)
+  -webkit-animation: #{$str}
+  -moz-animation: #{$str}
+  animation: #{$str}
+  -webkit-animation-iteration-count: #{$str}
+  -moz-animation-iteration-count: #{$str}
+  animation-iteration-count: #{$str}
+  animation-timing-function: #{$str}
+  animation-duration: #{$str}
+
+  
+  
