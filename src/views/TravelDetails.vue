@@ -48,7 +48,6 @@
             ></textarea>
             <button class="voice" @click="toggleMic" v-show="!showMic">
               Voice Typing
-              <!--  <span class="tooltiptext">Click and hold to talk</span> -->
             </button>
             <div class="mic" v-show="showMic"></div>
             <img
@@ -105,7 +104,7 @@ export default {
 		position: relative
 		bottom: -6px
 		margin-right: 5px
-		+base.sun-animation()
+		@include base.animation('pulse 2s ease-in infinite')
 		@keyframes pulse
 			0%
 				-webkit-transform: scale(1)
@@ -122,7 +121,7 @@ export default {
 			100%
 				-webkit-transform: scale(1)
 				opacity: 0.8
-
+		
 	.weather
 		margin: 0 0 0 30px
 		position: relative
@@ -178,18 +177,18 @@ export default {
 		position: relative
 		bottom: -3px
 	.patient
-		+base.common-button-red()
+		+base.common-button-red
 		width: 130px
 		height: 35px
 		margin-left: 25px
 
 	.hospital
-		+base.common-ghost-button-red()
+		+base.common-ghost-button-red
 		width: 130px
 		height: 35px
 
 .voice-type
-	+base.flex-column-align-center()
+	+base.flex-column-align-center
 
 	textarea
 		width: 85%
@@ -199,7 +198,7 @@ export default {
 		padding: 5px 10px
 
 	.voice
-		+base.common-button-orange()
+		+base.common-button-orange
 		font-family: base.$font-Roboto
 		align-self: flex-end
 		font-size: 14px
@@ -234,7 +233,7 @@ export default {
 		margin-right: 48px
 		position: relative
 		bottom: -25px
-		+base.mic-animation()
+		@include base.animation('pulse1 1.5s infinite linear')
 		@keyframes pulse1
 			0%
 				box-shadow: 0px 0px 5px 0px rgba(255,0,0,.3)
@@ -246,7 +245,7 @@ export default {
 
 @media (min-width: base.$breakpoint)
 	.travel-container
-		+base.flex-column-align-center()
+		+base.flex-column-align-center
 
 		.sub-header
 			width: 100%
@@ -254,7 +253,7 @@ export default {
 			width: 100%
 
 	.top
-		+base.flex-column-align-center()
+		+base.flex-column-align-center
 		h1
 			font-size: 36px
 			margin: 15px
@@ -284,8 +283,7 @@ export default {
 			position: relative
 			top: 7px
 			margin-right: 5px
-			+base.sun-animation()
-
+			@include base.animation('pulse 2s ease-in infinite')
 			@keyframes pulse
 				0%
 					-webkit-transform: scale(1)
@@ -307,14 +305,14 @@ export default {
 		display: flex
 		.right
 			width: 40%
-			+base.flex-column-align-center()
+			+base.flex-column-align-center
 			.bottom
 				width: 100%
 				height: 100%
 				p
 					padding-top: 10%
 				.buttons
-					+base.flex-column-align-center()
+					+base.flex-column-align-center
 					.hospital
 						width: 150px
 						height: 40px
@@ -341,7 +339,7 @@ export default {
 					margin-right: 48px
 					position: relative
 					bottom: -25px
-					+base.mic-animation()
+					@include base.animation('pulse1 1.5s infinite linear')
 					@keyframes pulse1
 						0%
 							box-shadow: 0px 0px 5px 0px rgba(255,0,0,.3)

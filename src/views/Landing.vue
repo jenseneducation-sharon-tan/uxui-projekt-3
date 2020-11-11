@@ -26,7 +26,6 @@ export default {
   },
 data: function () {
     return {
-/* isVisible: true, */
 windowWidth: window.innerWidth
 };
 },
@@ -61,7 +60,7 @@ a
 	width: 120px
 	height: 150px
 	z-index: 1
-	animation: bounceIn 0.6s
+	@include base.animation(bounceIn 0.6s)
 	@keyframes bounceIn 
 		0% 
 			opacity: 1
@@ -86,7 +85,7 @@ a
 	flex-direction: column
 
 .text
-	+base.flex-column-align-center()
+	+base.flex-column-align-center
 	justify-content: center
 	h1
 		color: base.$white
@@ -119,12 +118,8 @@ a
 			transform: skew(-2deg)
 		100% 
 			transform: skew(0)
-	&:hover 
-		animation-name: wobble-top
-		animation-duration: 1s
-		animation-timing-function: ease-in-out
-		animation-iteration-count: 1
-
+	&:hover
+		@include base.animation(wobble-top 1s ease-in-out 1)
 header
 	display: none 
 

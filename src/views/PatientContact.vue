@@ -51,10 +51,10 @@ export default {
 	height: 100vh
 	font-family: base.$font-Roboto
 	font-size: 24px
-	+base.flex-column-align-center()
+	+base.flex-column-align-center
 
 	.patient-details
-		+base.flex-column-align-center()
+		+base.flex-column-align-center
 
 		.name
 			font-weight: 700
@@ -73,7 +73,7 @@ iframe
 		height: 300px
 
 .buttons
-	+base.flex-column-align-center()
+	+base.flex-column-align-center
 	font-size: 24px
 	margin-top: 20px
 
@@ -116,7 +116,7 @@ footer
 		height: 500px
 
 	.buttons
-		+base.flex-row-justify-center()
+		+base.flex-row-justify-center
 		flex-direction: row-reverse
 		margin: 30px 0 40px
 

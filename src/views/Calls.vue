@@ -45,7 +45,7 @@ export default {
 
 .call-page
     text-align: center
-    +base.flex-column-align-center()
+    +base.flex-column-align-center
     margin: auto
 
     .calls
@@ -79,7 +79,7 @@ export default {
                 margin-left: 2em
 
 .button-small
-    +base.common-button-orange()
+    +base.common-button-orange
     width: 48px
     height: 28px
     border: base.$orange
